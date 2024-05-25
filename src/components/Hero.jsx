@@ -2,7 +2,7 @@ import React from "react";
 import { Stack, Image, Text } from "@fluentui/react";
 
 const Hero = ({
-  imageUrl = "https://assets.weforum.org/article/image/0ZUBmNNVLRCfn3NdU55nQ00UF64m2ObtcDS0grx02fA.jpg",
+  imageUrl = "https://github.com/amandadr/newfie-portfolio/blob/page/homepage/public/images/coppermine_1.jpeg?raw=true",
   text = "I need a Hero!",
 }) => {
   return (
@@ -46,7 +46,10 @@ const Hero = ({
           },
         }}
       >
-        <Text variant="xxLarge" styles={{ root: { fontWeight: "bold", color: "white" } }}>
+        <Text
+          variant="xxLarge"
+          styles={{ root: { fontWeight: "bold", color: "white" } }}
+        >
           {text}
         </Text>
       </Stack>
