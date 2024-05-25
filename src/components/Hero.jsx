@@ -1,10 +1,8 @@
 import React from "react";
 import { Stack, Image, Text } from "@fluentui/react";
 
-const Hero = ({
-  imageUrl = "https://github.com/amandadr/newfie-portfolio/blob/page/homepage/public/images/coppermine_1.jpeg?raw=true",
-  text = "I need a Hero!",
-}) => {
+const Hero = (props) => {
+  const { imageUrl, text } = props;
   return (
     <Stack
       className="hero"
@@ -21,13 +19,12 @@ const Hero = ({
       }}
     >
       <Image
-        src={imageUrl}
+        src={imageUrl || "https://github.com/amandadr/newfie-portfolio/blob/page/homepage/public/images/coppermine_1.jpeg?raw=true"}
         styles={{
           root: {
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
-            objectFit: "cover",
             width: "100%",
             height: "100%",
           },
@@ -50,7 +47,7 @@ const Hero = ({
           variant="xxLarge"
           styles={{ root: { fontWeight: "bold", color: "white" } }}
         >
-          {text}
+          {text || "Welcome to my portfolio!"}
         </Text>
       </Stack>
     </Stack>
