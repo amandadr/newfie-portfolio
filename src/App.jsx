@@ -1,11 +1,13 @@
-import './App.css';
 import HomePage from './pages/HomePage';
+import { FluentProvider, teamsLightTheme } from '@fluentui/react-components';
 
 function App() {
   return (
-    <div className="App">
+    <FluentProvider theme={teamsLightTheme}>
+      <div className="App">
       <HomePage />
-    </div>
+      </div>
+    </FluentProvider>
   );
 }
 
