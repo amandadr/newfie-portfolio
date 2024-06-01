@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from "react";
 
-function Introduction() {
-  const introductionRef = useRef(null);
+const Introduction: React.FC = () => {
+  const introductionRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -34,6 +34,6 @@ function Introduction() {
       </p>
     </div>
   );
-}
+};
 
 export default Introduction;
