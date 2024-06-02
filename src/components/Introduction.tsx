@@ -56,6 +56,7 @@ const Introduction: React.FC<IntroductionProps> = ({ backgroundImageUrl }) => {
   };
 
   const cardStyle = {
+    maxWidth: "80%",
     padding: "48px",
     backgroundColor: "rgba(255, 255, 255, 0.8)",
     borderRadius: "32px",
