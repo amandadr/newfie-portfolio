@@ -1,11 +1,11 @@
 import React, { useEffect, useRef } from "react";
 import {
-  Stack,
   Text,
-  DocumentCard,
-  DocumentCardTitle,
-  DocumentCardDetails,
-} from "@fluentui/react";
+  Card,
+  CardHeader,
+  CardPreview,
+} from "@fluentui/react-components";
+import "../index.css";
 
 interface IntroductionProps {
   backgroundImageUrl: string;
@@ -18,9 +18,11 @@ const Introduction: React.FC<IntroductionProps> = ({ backgroundImageUrl }) => {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          entry.target.classList.add("zoomed");
+          entry.target.classList.add("animate__animated", "animate__fadeIn");
         } else {
-          entry.target.classList.remove("zoomed");
+          setTimeout(() => {
+            entry.target.classList.remove("animate__animated", "animate__fadeIn");
+          }, 1000);
         }
       },
       { threshold: 0.2 }
@@ -41,7 +43,8 @@ const Introduction: React.FC<IntroductionProps> = ({ backgroundImageUrl }) => {
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
-    height: "100vh",
+    height: "100dvh",
+    minWidth: "100vw",
     backgroundImage: `url(${
       backgroundImageUrl ||
       "https://backiee.com/static/wallpapers/3840x2160/187444.jpg"
@@ -49,6 +52,7 @@ const Introduction: React.FC<IntroductionProps> = ({ backgroundImageUrl }) => {
     backgroundSize: "cover",
     backgroundPosition: "center",
     filter: "brightness(0.85)",
+    animationDuration: "0.75s",
   };
 
   const cardStyle = {
@@ -58,19 +62,21 @@ const Introduction: React.FC<IntroductionProps> = ({ backgroundImageUrl }) => {
   };
 
   return (
+    <div style={{ backgroundColor: "inherit" }}>
     <div
       ref={introductionRef}
       style={backgroundStyle}
     >
-      <DocumentCard style={cardStyle}>
-        <DocumentCardTitle title="Hi, I'm John Doe" />
-        <DocumentCardDetails>
-          <Text variant="medium">
+      <Card style={cardStyle}>
+        <CardHeader header="Hi, I'm John Doe" />
+        <CardPreview>
+          <Text size={400}>
             I'm a software engineer with 5 years of experience in web
             development.
           </Text>
-        </DocumentCardDetails>
-      </DocumentCard>
+        </CardPreview>
+      </Card>
+    </div>
     </div>
   );
 };

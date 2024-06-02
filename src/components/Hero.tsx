@@ -1,5 +1,7 @@
 import React from "react";
-import { Stack, Image, Text } from "@fluentui/react";
+import { Stack } from "@fluentui/react";
+import { Image, Text } from "@fluentui/react-components";
+import "../index.css";
 
 interface HeroProps {
   imageUrl?: string;
@@ -14,7 +16,7 @@ const Hero: React.FC<HeroProps> = (props) => {
       styles={{
         root: {
           height: "100vh",
-          width: "100vw",
+          width: "100%",
           margin: 0,
           padding: 0,
           display: "flex",
@@ -28,14 +30,12 @@ const Hero: React.FC<HeroProps> = (props) => {
           imageUrl ||
           "https://github.com/amandadr/newfie-portfolio/blob/page/homepage/public/images/coppermine_1.jpeg?raw=true"
         }
-        styles={{
-          root: {
+        style={{
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
             width: "100%",
             height: "100%",
-          },
         }}
       />
       <Stack
@@ -52,8 +52,8 @@ const Hero: React.FC<HeroProps> = (props) => {
         }}
       >
         <Text
-          variant="xxLarge"
-          styles={{ root: { fontWeight: "bold", color: "white" } }}
+          size={700}
+          style={{ fontWeight: "bold", color: "white" }}
         >
           {text || "Welcome to my portfolio!"}
         </Text>
