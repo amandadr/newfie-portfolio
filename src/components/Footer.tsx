@@ -2,8 +2,13 @@ import React from "react";
 import { Stack } from "@fluentui/react";
 import { Image, Link, Text } from "@fluentui/react-components";
 import FooterNav from "components/FooterNav";
+import green_gardens from "/images/green_gardens.jpeg";
 
-const Footer: React.FC = () => {
+interface FooterProps {
+  imageUrl?: string;
+}
+
+const Footer: React.FC<FooterProps> = ({ imageUrl }) => {
   const currentYear = new Date().getFullYear();
 
   return (
@@ -19,7 +24,7 @@ const Footer: React.FC = () => {
         justifyContent: "space-between",
         alignItems: "center",
         backgroundColor: "#3d3d3d",
-        backgroundImage: "url('/images/green_gardens.jpeg')",
+        backgroundImage: imageUrl || green_gardens,
         backgroundPosition: "center",
         color: "#fff",
       }}
