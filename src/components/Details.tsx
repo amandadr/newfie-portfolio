@@ -63,6 +63,7 @@ const Details: React.FC<DetailsProps> = ({ header, previewText }) => {
         }}
       >
         <Card
+          size="medium"
           style={{
             position: "absolute",
             height: "95%",
@@ -77,8 +78,8 @@ const Details: React.FC<DetailsProps> = ({ header, previewText }) => {
             borderRadius: "2em",
           }}
         >
-          <CardHeader header={header || "This is Header text."} />
-          <CardPreview>
+          <CardPreview style={{ display: "flex", flexDirection: "column", maxHeight: "100%", gap: "1em" }}>
+            <Text size={700}>{header || "Header"}</Text>
             <Text size={400}>{previewText || "This is Preview text."}</Text>
           </CardPreview>
         </Card>
