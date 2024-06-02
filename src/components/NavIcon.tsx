@@ -27,7 +27,7 @@ const NavIcon: React.FC<NavIconProps> = (props) => {
     >
       <Link
         href={url}
-        target="_blank"
+        target=""
         appearance="subtle"
         style={{
           position: "relative",
