@@ -29,7 +29,12 @@ const NavIcon: React.FC<NavIconProps> = (props) => {
         href={url}
         target="_blank"
         appearance="subtle"
-        style={{ position: "relative", display: "flex", justifyContent: "center", alignItems: "center"}}
+        style={{
+          position: "relative",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
       >
         <Image
           src={imageUrl}
@@ -41,8 +46,14 @@ const NavIcon: React.FC<NavIconProps> = (props) => {
           }}
         />
         <Text
-          style={{ position: "absolute", zIndex: "2", color: "white" }}
+          style={{
+            position: "absolute",
+            zIndex: "2",
+            color: "white",
+            textShadow: "5px 2px 8px #3D3D3D, -5px -2px 8px #3D3D3D",
+          }}
           weight="bold"
+          as="h2"
           size={600}
           align="center"
         >
