@@ -24,7 +24,7 @@ const Footer: React.FC<FooterProps> = ({ imageUrl }) => {
         justifyContent: "space-between",
         alignItems: "center",
         backgroundColor: "#3d3d3d",
-        backgroundImage: imageUrl || green_gardens,
+        backgroundImage: `url(${imageUrl || green_gardens})`,
         backgroundPosition: "center",
         color: "#fff",
       }}
