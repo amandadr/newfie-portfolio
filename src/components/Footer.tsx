@@ -1,45 +1,7 @@
 import React from "react";
 import { Stack } from "@fluentui/react";
 import { Image, Link, Text } from "@fluentui/react-components";
-
-interface FooterLinkProps {
-  imgHref: string;
-  imgAlt: string;
-  href: string;
-  target?: string;
-}
-
-const FooterLink: React.FC<FooterLinkProps> = ({
-  imgHref,
-  imgAlt,
-  href,
-  target,
-}) => {
-  return (
-    <Link
-      as="a"
-      href={href}
-      target={target}
-      style={{
-        position: "relative",
-        height: "100%",
-        display: "flex",
-        alignItems: "end",
-      }}
-    >
-      <Image
-        src={imgHref}
-        alt={imgAlt}
-        style={{
-          position: "relative",
-          maxHeight: "15vh",
-          height: "100%",
-          aspectRatio: "1/1",
-        }}
-      />
-    </Link>
-  );
-};
+import FooterNav from "components/FooterNav";
 
 const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
@@ -50,7 +12,8 @@ const Footer: React.FC = () => {
       style={{
         zIndex: "1",
         display: "flex",
-        height: "15vh",
+        height: "20vh",
+        maxHeight: "25em",
         width: "100%",
         flexDirection: "row",
         justifyContent: "space-between",
@@ -63,7 +26,7 @@ const Footer: React.FC = () => {
     >
       <Stack
         style={{
-          height: "60%",
+          height: "50%",
           maxWidth: "50%",
           backgroundColor: "#ddd",
           display: "flex",
@@ -88,7 +51,7 @@ const Footer: React.FC = () => {
       <Stack
         style={{
           height: "90%",
-          width: "20%",
+          width: "35%",
           maxWidth: "50%",
           display: "flex",
           flexDirection: "column",
@@ -98,41 +61,7 @@ const Footer: React.FC = () => {
           marginBottom: "2%",
         }}
       >
-        <nav
-          style={{
-            position: "relative",
-            zIndex: "2",
-            height: "50%",
-            width: "100%",
-            gap: "10%",
-            marginTop: "5%",
-            display: "flex",
-            flexDirection: "row",
-            justifyContent: "space-between",
-            backgroundColor: "rgba(50, 50, 50, 0.45)",
-            borderRadius: "10px",
-            padding: "3%",
-          }}
-        >
-          <FooterLink
-            imgHref="/icons/linkedin-color.svg"
-            imgAlt="LinkedIn"
-            href="https://www.linkedin.com/in/amandadroy/"
-            target="_blank"
-          />
-          <FooterLink
-            imgHref="/icons/github-color.svg"
-            imgAlt="GitHub"
-            href="https://github.com/amandadr"
-            target="_blank"
-          />
-          <FooterLink
-            imgHref="/icons/gmail-color.svg"
-            imgAlt="Email"
-            href="mailto:amandadroy@gmail.com"
-            target="_blank"
-          />
-        </nav>
+        <FooterNav />
         <Text
           size={300}
           align="end"
