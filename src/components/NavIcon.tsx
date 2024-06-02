@@ -14,18 +14,18 @@ const NavIcon: React.FC<NavIconProps> = (props) => {
 
   return (
     <Stack
-      className="nav-icon"
+      className="NavIcon"
       styles={{
         root: {
           display: "flex",
           flex: "1",
-          // maxWidth: "33.33%",
           minWidth: "33.33%",
           aspectRatio: "1/1",
         },
       }}
     >
       <Link
+        as="a"
         href={url}
         target=""
         appearance="subtle"
