@@ -7,6 +7,7 @@ interface NavContainerProps {
   navIcons: {
     label: string;
     url: string;
+    target?: string;
     imageUrl: string;
   }[];
 }
@@ -36,6 +37,7 @@ const NavContainer: React.FC<NavContainerProps> = (props) => {
           key={index}
           label={navIcon.label}
           url={navIcon.url}
+          target={navIcon.target}
           imageUrl={navIcon.imageUrl}
         />
       ))}

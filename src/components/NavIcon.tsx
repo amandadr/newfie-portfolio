@@ -6,11 +6,12 @@ import "../index.css";
 interface NavIconProps {
   label: string;
   url: string;
+  target?: string;
   imageUrl: string;
 }
 
 const NavIcon: React.FC<NavIconProps> = (props) => {
-  const { label, url, imageUrl } = props;
+  const { label, url, target, imageUrl } = props;
 
   return (
     <Stack
@@ -27,7 +28,7 @@ const NavIcon: React.FC<NavIconProps> = (props) => {
       <Link
         as="a"
         href={url}
-        target=""
+        target={target}
         appearance="subtle"
         style={{
           position: "relative",
