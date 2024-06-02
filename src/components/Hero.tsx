@@ -31,11 +31,11 @@ const Hero: React.FC<HeroProps> = (props) => {
           "https://github.com/amandadr/newfie-portfolio/blob/page/homepage/public/images/coppermine_1.jpeg?raw=true"
         }
         style={{
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            width: "100%",
-            height: "100%",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          width: "100%",
+          height: "100%",
         }}
       />
       <Stack
@@ -53,7 +53,13 @@ const Hero: React.FC<HeroProps> = (props) => {
       >
         <Text
           size={700}
-          style={{ fontWeight: "bold", color: "white" }}
+          as="h1"
+          align="center"
+          weight="bold"
+          style={{
+            color: "white",
+            textShadow: "5px 2px 8px #3D3D3D, -5px -2px 8px #3D3D3D",
+          }}
         >
           {text || "Welcome to my portfolio!"}
         </Text>
