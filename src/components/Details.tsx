@@ -2,7 +2,6 @@ import React, { useRef } from "react";
 import {
   Text,
   Card,
-  CardHeader,
   CardPreview,
   Image,
 } from "@fluentui/react-components";
@@ -73,12 +72,19 @@ const Details: React.FC<DetailsProps> = ({ header, previewText }) => {
             alignItems: "start",
             justifyContent: "center",
             padding: "2em",
-            backgroundColor: "rgba(70, 70, 70, 0.2)",
+            backgroundColor: "rgba(30, 30, 30, 0.75)",
             color: "whitesmoke",
             borderRadius: "2em",
           }}
         >
-          <CardPreview style={{ display: "flex", flexDirection: "column", maxHeight: "100%", gap: "1em" }}>
+          <CardPreview
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              maxHeight: "100%",
+              gap: "1em",
+            }}
+          >
             <Text size={700}>{header || "Header"}</Text>
             <Text size={400}>{previewText || "This is Preview text."}</Text>
           </CardPreview>
