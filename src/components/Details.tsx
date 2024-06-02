@@ -9,11 +9,13 @@ import coppermine_2 from "/images/coppermine_2.jpeg";
 import me_1 from "/images/me_1.jpeg";
 
 interface DetailsProps {
+  bgImage?: string;
+  highlightImage?: string;
   header: string;
   previewText: string;
 }
 
-const Details: React.FC<DetailsProps> = ({ header, previewText }) => {
+const Details: React.FC<DetailsProps> = ({ bgImage, highlightImage, header, previewText }) => {
   return (
     <div
       style={{
@@ -26,7 +28,7 @@ const Details: React.FC<DetailsProps> = ({ header, previewText }) => {
       }}
     >
       <Image
-        src={coppermine_2}
+        src={bgImage || coppermine_2}
         fit="cover"
         style={{
           width: "100%",
@@ -37,7 +39,7 @@ const Details: React.FC<DetailsProps> = ({ header, previewText }) => {
         }}
       />
       <Image
-        src={me_1}
+        src={highlightImage || me_1}
         fit="contain"
         style={{
           position: "absolute",
