@@ -39,8 +39,8 @@ const HomePage: React.FC = () => {
         "https://images.pexels.com/photos/11542288/pexels-photo-11542288.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
     },
     {
-      label: "???",
-      url: "/something-else",
+      label: "Blog\n(In Progress)",
+      url: "/blog",
       imageUrl:
         "https://images.pexels.com/photos/11493011/pexels-photo-11493011.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
     },
