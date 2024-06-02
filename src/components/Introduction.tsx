@@ -4,14 +4,16 @@ import {
   Card,
   CardHeader,
   CardPreview,
+  Image,
 } from "@fluentui/react-components";
+import coppermine_2 from "images/coppermine_2.jpeg";
 import "../index.css";
 
 interface IntroductionProps {
-  backgroundImageUrl: string;
+  imageUrl: string;
 }
 
-const Introduction: React.FC<IntroductionProps> = ({ backgroundImageUrl }) => {
+const Introduction: React.FC<IntroductionProps> = ({ imageUrl }) => {
   const introductionRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
@@ -21,7 +23,10 @@ const Introduction: React.FC<IntroductionProps> = ({ backgroundImageUrl }) => {
           entry.target.classList.add("animate__animated", "animate__fadeIn");
         } else {
           setTimeout(() => {
-            entry.target.classList.remove("animate__animated", "animate__fadeIn");
+            entry.target.classList.remove(
+              "animate__animated",
+              "animate__fadeIn"
+            );
           }, 1000);
         }
       },
@@ -39,36 +44,33 @@ const Introduction: React.FC<IntroductionProps> = ({ backgroundImageUrl }) => {
     };
   }, []);
 
-  const backgroundStyle = {
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-    height: "100dvh",
-    minWidth: "100vw",
-    backgroundImage: `url(${
-      backgroundImageUrl ||
-      "https://backiee.com/static/wallpapers/3840x2160/187444.jpg"
-    })`,
-    backgroundSize: "cover",
-    backgroundPosition: "center",
-    filter: "brightness(0.85)",
-    animationDuration: "0.75s",
-    outline: "1em inset rgba(70, 70, 70, 0.1)",
-    outlineOffset: "-0.5em",
-  };
-
   const cardStyle = {
     maxWidth: "80%",
     padding: "48px",
     backgroundColor: "rgba(255, 255, 255, 0.8)",
     borderRadius: "32px",
+    position: "absolute" as "absolute",
+    top: "50%",
+    left: "50%",
+    transform: "translate(-50%, -50%)",
   };
 
   return (
     <div
       ref={introductionRef}
-      style={backgroundStyle}
+      style={{ position: "relative", height: "100dvh", minWidth: "100vw" }}
     >
+      <Image
+        src={imageUrl || coppermine_2}
+        fit="cover"
+        style={{
+          width: "100%",
+          height: "100%",
+          filter: "brightness(0.85)",
+          outline: "0.5em inset rgba(70, 70, 70, 0.1)",
+          outlineOffset: "-0.5em",
+        }}
+      />
       <Card style={cardStyle}>
         <CardHeader header="Hi, I'm John Doe" />
         <CardPreview>

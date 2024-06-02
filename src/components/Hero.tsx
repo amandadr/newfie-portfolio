@@ -1,6 +1,7 @@
 import React from "react";
 import { Stack } from "@fluentui/react";
 import { Image, Text } from "@fluentui/react-components";
+import coppermine_1 from "images/coppermine_1.jpeg";
 import "../index.css";
 
 interface HeroProps {
@@ -29,7 +30,7 @@ const Hero: React.FC<HeroProps> = (props) => {
         fit="cover"
         src={
           imageUrl ||
-          "https://github.com/amandadr/newfie-portfolio/blob/page/homepage/public/images/coppermine_1.jpeg?raw=true"
+          coppermine_1
         }
         style={{
           boxSizing: "border-box",
@@ -38,7 +39,7 @@ const Hero: React.FC<HeroProps> = (props) => {
           alignItems: "center",
           width: "100%",
           height: "100%",
-          outline: "1em inset rgba(70, 70, 70, 0.1)",
+          outline: "0.5em inset rgba(70, 70, 70, 0.1)",
           outlineOffset: "-0.5em",
         }}
       />
