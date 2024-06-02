@@ -15,6 +15,7 @@ const Footer: React.FC<FooterProps> = ({ imageUrl }) => {
     <footer
       className="Footer"
       style={{
+        position: "relative",
         zIndex: "1",
         display: "flex",
         height: "20vh",
@@ -24,11 +25,22 @@ const Footer: React.FC<FooterProps> = ({ imageUrl }) => {
         justifyContent: "space-between",
         alignItems: "center",
         backgroundColor: "#3d3d3d",
-        backgroundImage: `url(${imageUrl || green_gardens})`,
-        backgroundPosition: "center",
         color: "#fff",
       }}
     >
+      <Image
+        src={imageUrl || green_gardens}
+        alt="Background"
+        fit="cover"
+        style={{
+          position: "absolute",
+          top: 0,
+          left: 0,
+          width: "100%",
+          height: "100%",
+          zIndex: -1,
+        }}
+      />
       <Stack
         style={{
           height: "50%",
