@@ -53,6 +53,8 @@ const Introduction: React.FC<IntroductionProps> = ({ backgroundImageUrl }) => {
     backgroundPosition: "center",
     filter: "brightness(0.85)",
     animationDuration: "0.75s",
+    outline: "1em inset rgba(70, 70, 70, 0.1)",
+    outlineOffset: "-0.5em",
   };
 
   const cardStyle = {
@@ -63,7 +65,6 @@ const Introduction: React.FC<IntroductionProps> = ({ backgroundImageUrl }) => {
   };
 
   return (
-    <div style={{ backgroundColor: "inherit" }}>
     <div
       ref={introductionRef}
       style={backgroundStyle}
@@ -77,7 +78,6 @@ const Introduction: React.FC<IntroductionProps> = ({ backgroundImageUrl }) => {
           </Text>
         </CardPreview>
       </Card>
-    </div>
     </div>
   );
 };

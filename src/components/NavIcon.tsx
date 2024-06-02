@@ -44,6 +44,8 @@ const NavIcon: React.FC<NavIconProps> = (props) => {
             position: "relative",
             aspectRatio: "1/1",
             zIndex: "1",
+            outline: "0.2em solid rgba(70, 70, 70, 0.1)",
+            outlineOffset: "-0.2em",
           }}
         />
         <Text

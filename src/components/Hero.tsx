@@ -26,16 +26,20 @@ const Hero: React.FC<HeroProps> = (props) => {
       }}
     >
       <Image
+        fit="cover"
         src={
           imageUrl ||
           "https://github.com/amandadr/newfie-portfolio/blob/page/homepage/public/images/coppermine_1.jpeg?raw=true"
         }
         style={{
+          boxSizing: "border-box",
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
           width: "100%",
           height: "100%",
+          outline: "1em inset rgba(70, 70, 70, 0.1)",
+          outlineOffset: "-0.5em",
         }}
       />
       <Stack
