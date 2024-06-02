@@ -1,7 +1,8 @@
 import React from "react";
-import NavContainer from "../components/NavContainer";
-import Hero from "../components/Hero";
-import Introduction from "../components/Introduction";
+import Hero from "components/Hero";
+import Introduction from "components/Introduction";
+import Footer from "components/Footer";
+import NavContainer from "components/NavContainer";
 import "../index.css";
 
 
@@ -55,6 +56,7 @@ const HomePage: React.FC = () => {
       <NavContainer
         navIcons={navIcons}
       />
+      <Footer />
     </div>
   );
 };
