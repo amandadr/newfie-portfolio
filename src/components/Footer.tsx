@@ -37,7 +37,7 @@ const Footer: React.FC = () => {
       >
         <Link as="a" href="/" target="" style={{ height: "100%" }}>
           <Image
-            src="/public/favicon.ico"
+            src="/favicon.ico"
             alt="Logo"
             style={{
               aspectRatio: "1/1",
