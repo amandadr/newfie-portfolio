@@ -25,7 +25,7 @@ const AboutPage: React.FC = () => {
         highlightImage={me_1}
         highlightPosition="right"
       />
-      <Divider outline={true} />
+      <Divider outline={true} width="0.5em" />
       <NavContainer title="My Dev Experience:" navIcons={expIcons} />
       <Divider />
       <Details

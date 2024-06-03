@@ -55,6 +55,11 @@ export const skills = {
     },
     {
       color: "rgba(35, 35, 35)",
+      name: "TypeScript",
+      class: "devicon-typescript-plain",
+    },
+    {
+      color: "rgba(35, 35, 35)",
       name: "JavaScript",
       class: "devicon-javascript-plain",
     },
@@ -62,6 +67,11 @@ export const skills = {
       color: "rgba(35, 35, 35)",
       name: "React",
       class: "devicon-react-plain",
+    },
+    {
+      color: "rgba(35, 35, 35)",
+      name: "Vite",
+      class: "devicon-vite-plain",
     },
     {
       color: "rgba(35, 35, 35)",

@@ -38,14 +38,42 @@ const Skills: React.FC<SkillsProps> = ({ skills, imageUrl }) => {
           outlineOffset: "-0.5em",
         }}
       />
+      <Text
+        as="h2"
+        weight="semibold"
+        style={{
+          zIndex: 3,
+          position: "relative",
+          marginTop: "0.75em",
+          marginBottom: "0.25em",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          height: "1em",
+          maxHeight: "1em",
+          width: "fit-content",
+          paddingInline: "0.4em",
+          paddingTop: "0.1em",
+          paddingBottom: "0.2em",
+          fontSize: "2.5em",
+          color: "white",
+          textShadow: "5px 2px 8px #232",
+          backgroundColor: "rgba(100, 100, 100, 0.65)",
+          borderRadius: "1em",
+          boxShadow: "1px 1px 0 1px rgba(50, 50, 50, 0.91)",
+        }}
+      >
+        Skills:
+      </Text>
       <div
         style={{
           zIndex: 2,
+          position: "relative",
           display: "flex",
           flexWrap: "wrap",
           justifyContent: "center",
           alignItems: "center",
-          height: "100%",
+          height: "95%",
           padding: "2em",
           gap: "1em",
         }}
@@ -60,6 +88,7 @@ const Skills: React.FC<SkillsProps> = ({ skills, imageUrl }) => {
               justifyContent: "center",
               backgroundColor: skill.color,
               color: "white",
+              border: "0.2em solid rgba(175, 175, 175, 0.3)",
               borderRadius: "50%",
               width: "15vmin",
               height: "15vmin",
@@ -74,7 +103,9 @@ const Skills: React.FC<SkillsProps> = ({ skills, imageUrl }) => {
               className={skill.class}
               style={{ fontSize: "2em", marginTop: "0.15em" }}
             ></i>
-            <Text weight="semibold" style={{ fontSize: "0.8em" }}>{skill.name}</Text>
+            <Text weight="semibold" style={{ fontSize: "0.8em" }}>
+              {skill.name}
+            </Text>
           </div>
         ))}
       </div>
