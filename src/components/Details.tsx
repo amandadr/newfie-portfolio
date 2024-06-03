@@ -1,21 +1,25 @@
 import React, { useRef } from "react";
-import {
-  Text,
-  Card,
-  CardPreview,
-  Image,
-} from "@fluentui/react-components";
+import { Text, Card, CardPreview, Image } from "@fluentui/react-components";
 import coppermine_2 from "/images/coppermine_2.jpeg";
 import me_1 from "/images/me_1.jpeg";
 
 interface DetailsProps {
   bgImage?: string;
   highlightImage?: string;
+  highlightPosition?: "left" | "right";
   header: string;
   previewText: string;
 }
 
-const Details: React.FC<DetailsProps> = ({ bgImage, highlightImage, header, previewText }) => {
+const Details: React.FC<DetailsProps> = ({
+  bgImage,
+  highlightImage,
+  highlightPosition,
+  header,
+  previewText,
+}) => {
+  const position = highlightPosition || (highlightImage ? "left" : undefined);
+
   return (
     <div
       style={{
@@ -38,19 +42,24 @@ const Details: React.FC<DetailsProps> = ({ bgImage, highlightImage, header, prev
           outlineOffset: "-0.5em",
         }}
       />
-      <Image
-        src={highlightImage || me_1}
-        fit="contain"
-        style={{
-          position: "absolute",
-          width: "50%",
-          height: "100%",
-          outline: "0.5em inset rgba(70, 70, 70, 0.1)",
-          outlineOffset: "-0.5em",
-          borderRadius: "0 0.2em 0.2em 0",
-          backgroundColor: "rgba(70, 70, 70, 0.75)",
-        }}
-      />
+      {highlightImage && (
+        <Image
+          src={highlightImage || me_1}
+          fit="contain"
+          style={{
+            position: "absolute",
+            width: "50%",
+            height: "100%",
+            outline: "0.5em inset rgba(70, 70, 70, 0.1)",
+            outlineOffset: "-0.5em",
+            borderRadius:
+              position === "left" ? "0 0.2em 0.2em 0" : "0.2em 0 0 0.2em",
+            backgroundColor: "rgba(70, 70, 70, 0.75)",
+            left: position === "left" ? 0 : "auto",
+            right: position === "right" ? 0 : "auto",
+          }}
+        />
+      )}
       <div
         style={{
           position: "absolute",
@@ -59,7 +68,7 @@ const Details: React.FC<DetailsProps> = ({ bgImage, highlightImage, header, prev
           backgroundColor: "transparent",
           display: "flex",
           flexDirection: "row",
-          justifyContent: "end",
+          justifyContent: position === "left" ? "end" : "start",
           alignItems: "center",
         }}
       >
@@ -77,6 +86,8 @@ const Details: React.FC<DetailsProps> = ({ bgImage, highlightImage, header, prev
             backgroundColor: "rgba(30, 30, 30, 0.75)",
             color: "whitesmoke",
             borderRadius: "2em",
+            left: position === "left" ? "50%" : "auto",
+            right: position === "right" ? "50%" : "auto",
           }}
         >
           <CardPreview
