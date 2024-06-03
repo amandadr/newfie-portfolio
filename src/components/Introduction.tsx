@@ -59,7 +59,6 @@ const Introduction: React.FC<IntroductionProps> = ({ header, previewText, imageU
           display: "flex",
           width: "100%",
           height: "100%",
-          filter: "brightness(0.85)",
           outline: "0.5em inset rgba(70, 70, 70, 0.1)",
           outlineOffset: "-0.5em",
         }}
@@ -76,7 +75,7 @@ const Introduction: React.FC<IntroductionProps> = ({ header, previewText, imageU
           alignItems: "start",
           justifyContent: "center",
           padding: "2em",
-          backgroundColor: "rgba(30, 30, 30, 0.75)",
+          backgroundColor: "rgba(30, 30, 30, 0.8)",
           color: "whitesmoke",
           borderRadius: "2em",
         }}
