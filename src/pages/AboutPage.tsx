@@ -3,13 +3,15 @@ import Hero from "components/Hero";
 import Divider from "components/Divider";
 import Details from "components/Details";
 import NavContainer from "components/NavContainer";
+import Skills from "components/Skills";
 import Footer from "components/Footer";
 
 import fire from "/images/fire.jpeg";
 import flower_3 from "/images/flower_3.jpeg";
 import beach_2 from "/images/beach_2.jpeg";
 import me_1 from "/images/me_1.jpeg";
-import { expIcons } from "data/AboutPage";
+import gorge_1 from "/images/gorge_1.jpeg";
+import { expIcons, skills } from "data/AboutPage";
 
 const AboutPage: React.FC = () => {
   return (
@@ -34,8 +36,7 @@ const AboutPage: React.FC = () => {
         highlightPosition="left"
       />
       <Divider outline={true} />
-      {/* Skills component */}
-      <p>Skills</p>
+      <Skills skills={skills.icons} imageUrl={gorge_1} />
       <Divider outline={true} />
       <Details
         header="Dreams for the Future"
