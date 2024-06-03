@@ -16,11 +16,11 @@ const NavLink: React.FC<NavLinkProps> = (props) => {
     <div
       className="NavLink"
       style={{
-          display: "flex",
-          flex: "1",
-          minWidth: "33.33%",
-          maxWidth: "66.66%",
-          aspectRatio: "1/1",
+        display: "flex",
+        flex: "1",
+        minWidth: "33.33%",
+        maxWidth: "66.66%",
+        aspectRatio: "1/1",
       }}
     >
       <Link
@@ -56,6 +56,8 @@ const NavLink: React.FC<NavLinkProps> = (props) => {
             zIndex: "2",
             color: "white",
             textShadow: "5px 2px 8px #3D3D3D, -5px -2px 8px #3D3D3D",
+            backgroundColor: "rgba(100, 100, 100, 0.35)",
+            borderRadius: "2em",
           }}
           weight="bold"
           as="h2"
