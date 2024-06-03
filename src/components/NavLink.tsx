@@ -2,18 +2,19 @@ import React from "react";
 import { Image, Link, Text } from "@fluentui/react-components";
 import "../index.css";
 
-interface NavIconProps {
+interface NavLinkProps {
   imageUrl: string;
   label: string;
-  hook: any;
+  target?: string;
+  url: string;
 }
 
-const NavIcon: React.FC<NavIconProps> = (props) => {
-  const { label, imageUrl } = props;
+const NavLink: React.FC<NavLinkProps> = (props) => {
+  const { label, url, target, imageUrl } = props;
 
   return (
     <div
-      className="NavIcon"
+      className="NavLink"
       style={{
           display: "flex",
           flex: "1",
@@ -23,7 +24,9 @@ const NavIcon: React.FC<NavIconProps> = (props) => {
       }}
     >
       <Link
-        as="button"
+        as="a"
+        href={url}
+        target={target}
         appearance="subtle"
         style={{
           position: "relative",
@@ -66,4 +69,4 @@ const NavIcon: React.FC<NavIconProps> = (props) => {
   );
 };
 
-export default NavIcon;
+export default NavLink;

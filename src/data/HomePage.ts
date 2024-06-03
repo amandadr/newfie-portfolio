@@ -1,4 +1,4 @@
-export const navIcons = [
+export const homeLinks = [
   {
     label: "About",
     url: "/about",
