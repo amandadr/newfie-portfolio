@@ -44,6 +44,7 @@ const NavContainer: React.FC<NavContainerProps> = (props) => {
   return (
     <div
       className="NavContainer"
+      id="NavContainer"
       style={{
         minWidth: "100vw",
         maxWidth: "100vw",
