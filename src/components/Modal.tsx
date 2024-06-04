@@ -35,8 +35,6 @@ const Modal: React.FC<ModalProps> = ({
   githubUrl,
   techStack,
 }) => {
-  const navContainer = document.getElementById("NavContainer");
-  isOpen ? navContainer?.scrollIntoView({ behavior: "smooth" }) : null;
 
   return (
     <div
