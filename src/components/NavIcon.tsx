@@ -6,16 +6,21 @@ interface Details {
   date: string;
   header: string;
   content: string;
+  modalUrl?: string;
+  images: string[];
+  liveUrl?: string;
+  githubUrl: string;
+  techStack?: { class: string; name: string }[];
 }
 
 interface NavIconProps {
   imageUrl: string;
   label: string;
-  hook: () => void;
   details: Details;
+  hook: () => void;
 }
 
-const NavIcon: React.FC<NavIconProps> = ({ imageUrl, label, hook, details }) => {
+const NavIcon: React.FC<NavIconProps> = ({ imageUrl, label, hook }) => {
   return (
     <>
       <div
@@ -50,8 +55,8 @@ const NavIcon: React.FC<NavIconProps> = ({ imageUrl, label, hook, details }) => 
               width: "100%",
               aspectRatio: "1/1",
               zIndex: "1",
-              outline: "0.2em solid rgba(70, 70, 70, 0.1)",
-              outlineOffset: "-0.2em",
+              outline: "0.3em solid rgba(70, 70, 70, 0.2)",
+              outlineOffset: "-0.3em",
             }}
           />
           <Text

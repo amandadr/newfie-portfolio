@@ -9,7 +9,16 @@ interface NavContainerProps {
   navIcons?: {
     imageUrl: string;
     label: string;
-    details: { date: string; header: string; content: string; modalUrl?: string };
+    details: {
+      date: string;
+      header: string;
+      content: string;
+      modalUrl?: string;
+      images: string[];
+      liveUrl?: string;
+      githubUrl: string;
+      techStack?: { class: string; name: string }[];
+    };
   }[];
   navLinks?: {
     imageUrl: string;
@@ -28,9 +37,13 @@ const NavContainer: React.FC<NavContainerProps> = (props) => {
     setSelectedNavIcon(label);
   };
 
+  const selectedIconDetails = navIcons?.find(
+    (icon) => icon.label === selectedNavIcon
+  )?.details;
+
   return (
     <div
-      className="navContainer"
+      className="NavContainer"
       style={{
         minWidth: "100vw",
         maxWidth: "100vw",
@@ -73,10 +86,14 @@ const NavContainer: React.FC<NavContainerProps> = (props) => {
         <Modal
           isOpen={selectedNavIcon !== null}
           onClose={() => setSelectedNavIcon(null)}
-          date={navIcons?.find((icon) => icon.label === selectedNavIcon)?.details.date || "Date"}
-          header={navIcons?.find((icon) => icon.label === selectedNavIcon)?.details.header || "Header"}
-          content={navIcons?.find((icon) => icon.label === selectedNavIcon)?.details.content || "Content"}
-          imageUrl={navIcons?.find((icon) => icon.label === selectedNavIcon)?.details.modalUrl || "/images/flower_1.jpeg"}
+          date={selectedIconDetails?.date || "Date"}
+          header={selectedIconDetails?.header || "Header"}
+          content={selectedIconDetails?.content || "Content"}
+          imageUrl={selectedIconDetails?.modalUrl || "/images/flower_1.jpeg"}
+          galleryImages={selectedIconDetails?.images || []}
+          liveUrl={selectedIconDetails?.liveUrl || ""}
+          githubUrl={selectedIconDetails?.githubUrl || ""}
+          techStack={selectedIconDetails?.techStack || []}
         />
       ) : (
         <div

@@ -1,5 +1,12 @@
-import React from "react";
-import { Image, Card, CardPreview, Text } from "@fluentui/react-components";
+import React, { useState } from "react";
+import {
+  Image,
+  Card,
+  CardPreview,
+  CardFooter,
+  Text,
+  Link,
+} from "@fluentui/react-components";
 
 const styles = {
   dotContainer: {
@@ -9,6 +16,7 @@ const styles = {
     alignItems: "center",
     marginTop: "4em",
     marginBottom: "-3em",
+    cursor: "pointer",
   },
   dot: {
     width: "10px",
@@ -35,15 +43,53 @@ const styles = {
       transform: "translateY(-10px)",
     },
   },
+  xButton: {
+    fontSize: "2em",
+    color: "white",
+    display: "none",
+  },
+  xButtonVisible: {
+    display: "block",
+  },
 };
 
-const BouncingDots: React.FC = () => (
-  <div style={styles.dotContainer as React.CSSProperties}>
-    <div style={{ ...styles.dot, ...styles.dot1 } as React.CSSProperties}></div>
-    <div style={{ ...styles.dot, ...styles.dot2 } as React.CSSProperties}></div>
-    <div style={{ ...styles.dot, ...styles.dot3 } as React.CSSProperties}></div>
-  </div>
-);
+const BouncingDots: React.FC<{ onClose: () => void }> = ({ onClose }) => {
+  const [hover, setHover] = useState(false);
+
+  return (
+    <div
+      style={styles.dotContainer as React.CSSProperties}
+      onMouseEnter={() => setHover(true)}
+      onMouseLeave={() => setHover(false)}
+      onClick={onClose}
+    >
+      {hover ? (
+        <div
+          style={
+            {
+              ...styles.xButton,
+              ...styles.xButtonVisible,
+            } as React.CSSProperties
+          }
+        >
+          X
+        </div>
+      ) : (
+        <>
+          <div
+            style={{ ...styles.dot, ...styles.dot1 } as React.CSSProperties}
+          ></div>
+          <div
+            style={{ ...styles.dot, ...styles.dot2 } as React.CSSProperties}
+          ></div>
+          <div
+            style={{ ...styles.dot, ...styles.dot3 } as React.CSSProperties}
+          ></div>
+        </>
+      )}
+    </div>
+  );
+};
 
 interface ModalProps {
   isOpen: boolean;
@@ -52,6 +98,10 @@ interface ModalProps {
   header: string;
   content: string;
   imageUrl?: string;
+  galleryImages: Array<string>;
+  liveUrl?: string;
+  githubUrl: string;
+  techStack?: { class: string; name: string }[];
 }
 
 const Modal: React.FC<ModalProps> = ({
@@ -61,6 +111,10 @@ const Modal: React.FC<ModalProps> = ({
   header,
   content,
   imageUrl,
+  galleryImages,
+  liveUrl,
+  githubUrl,
+  techStack,
 }) => {
   if (!isOpen) return null;
 
@@ -91,6 +145,7 @@ const Modal: React.FC<ModalProps> = ({
           width: "100%",
           display: "flex",
           filter: "blur(3px) opacity(0.75)",
+          cursor: "pointer",
         }}
       />
       <Card
@@ -101,16 +156,86 @@ const Modal: React.FC<ModalProps> = ({
           padding: "2em",
           backgroundColor: "white",
           borderRadius: "1em",
+          cursor: "default",
         }}
         onClick={(e) => e.stopPropagation()}
       >
+        <CardPreview
+          style={{
+            display: "flex",
+            flexDirection: "row",
+            justifyContent: "space-around",
+            alignItems: "center",
+            marginBottom: "-1em",
+          }}
+        >
+          <Text size={300} weight="semibold">
+            {date}
+          </Text>
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "row",
+              justifyContent: "space-around",
+              gap: "1em",
+            }}
+          >
+            <Link
+              href={githubUrl}
+              appearance="subtle"
+              style={{
+                position: "relative",
+                display: "flex",
+                flexDirection: "row",
+                alignItems: "center",
+              }}
+            >
+              <i
+                className="devicon-github-plain"
+                style={{ fontSize: "2.5em", marginRight: "0.25em" }}
+              ></i>
+              <Text size={300}>GitHub Repo</Text>
+            </Link>
+            {liveUrl && <Link
+              href={liveUrl}
+              appearance="subtle"
+              style={{
+                position: "relative",
+                display: "flex",
+                flexDirection: "row",
+                alignItems: "center",
+              }}
+            >
+              <i
+                className="devicon-chrome-plain"
+                style={{ fontSize: "2.5em", marginRight: "0.25em" }}
+              ></i>
+              <Text size={300}>Live Site</Text>
+            </Link>}
+          </div>
+        </CardPreview>
         <CardPreview>
-          <Text size={300}>{date}</Text>
           <Text size={700}>{header}</Text>
           <Text size={400}>{content}</Text>
         </CardPreview>
+        <CardFooter>
+          {techStack?.map((tech) => (
+            <div
+              key={tech.name}
+              style={{
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                gap: "0.5em",
+              }}
+            >
+              <i className={tech.class} style={{ fontSize: "1.5em" }}></i>
+              <Text size={300}>{tech.name}</Text>
+            </div>
+          ))}
+        </CardFooter>
       </Card>
-      <BouncingDots />
+      <BouncingDots onClose={onClose} />
     </div>
   );
 };
