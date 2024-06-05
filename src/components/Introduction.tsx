@@ -5,7 +5,7 @@ import {
   CardPreview,
   Image,
 } from "@fluentui/react-components";
-import coppermine_2 from "images/coppermine_2.jpeg";
+import coppermine_2 from "/images/coppermine_2.jpeg";
 import "../index.css";
 
 interface IntroductionProps {
