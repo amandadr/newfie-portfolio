@@ -1,7 +1,7 @@
 import React from "react";
 import { Stack } from "@fluentui/react";
 import { Image, Text } from "@fluentui/react-components";
-import coppermine_1 from "images/coppermine_1.jpeg";
+import coppermine_1 from "/images/coppermine_1.jpeg";
 import "../index.css";
 
 interface HeroProps {
