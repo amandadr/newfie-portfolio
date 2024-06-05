@@ -12,7 +12,11 @@ const ProjectsPage: React.FC = () => {
   return (
     <section className="ProjectsPage">
       <Hero text="Projects" imageUrl={gorge_2} />
-      <Introduction header="These are my personal projects :)" previewText="I'll tell you more about how to take it all in right here..." imageUrl="" />
+      <Introduction
+        header="These are my personal projects :)"
+        previewText="I'll tell you more about how to take it all in right here..."
+        imageUrl=""
+      />
       <NavContainer navIcons={projectIcons} />
       <Footer imageUrl={field} />
     </section>
