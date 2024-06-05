@@ -13,7 +13,7 @@ const Hero: React.FC<HeroProps> = (props) => {
   const { imageUrl, text } = props;
   return (
     <Stack
-      className="hero"
+      className="Hero"
       styles={{
         root: {
           height: "100vh",
