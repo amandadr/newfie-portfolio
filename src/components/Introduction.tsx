@@ -48,10 +48,18 @@ const Introduction: React.FC<IntroductionProps> = ({ header, previewText, imageU
   return (
     <div
       ref={introductionRef}
-      style={{ position: "relative", height: "100vh", minWidth: "100vw", display: "flex", alignItems: "center", justifyContent: "center"}}
+      style={{
+        position: "relative",
+        height: "100vh",
+        minWidth: "100vw",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+      }}
     >
       <Image
         src={imageUrl || coppermine_2}
+        loading="lazy"
         fit="cover"
         style={{
           position: "absolute",

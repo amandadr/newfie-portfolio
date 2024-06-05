@@ -28,6 +28,7 @@ const FooterLink: React.FC<FooterLinkProps> = ({
     >
       <Image
         src={imgHref}
+        loading="lazy"
         alt={imgAlt}
         style={{
           position: "relative",

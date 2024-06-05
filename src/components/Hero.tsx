@@ -28,6 +28,7 @@ const Hero: React.FC<HeroProps> = (props) => {
     >
       <Image
         fit="cover"
+        loading="lazy"
         src={
           imageUrl ||
           coppermine_1

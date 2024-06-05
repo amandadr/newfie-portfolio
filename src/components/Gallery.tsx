@@ -16,7 +16,15 @@ const Gallery: React.FC<GalleryProps> = ({ images }) => {
 
   return (
     <div onClick={(e) => e.stopPropagation()} style={{ zIndex: 100 }}>
-      <ImageGallery  showFullscreenButton={false} items={galleryItems.slice(1)} additionalClass="Gallery" showPlayButton={false} showThumbnails={true} thumbnailPosition="top" />
+      <ImageGallery
+        showFullscreenButton={false}
+        items={galleryItems.slice(1)}
+        additionalClass="Gallery"
+        showPlayButton={false}
+        showThumbnails={true}
+        thumbnailPosition="top"
+        lazyLoad={true}
+      />
     </div>
   );
 };

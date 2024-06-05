@@ -28,6 +28,7 @@ const Skills: React.FC<SkillsProps> = ({ skills, imageUrl }) => {
     >
       <Image
         src={imageUrl}
+        loading="lazy"
         fit="cover"
         style={{
           zIndex: 1,
@@ -80,7 +81,7 @@ const Skills: React.FC<SkillsProps> = ({ skills, imageUrl }) => {
         }}
       >
         {skills.map((skill, i) => (
-          <SkillIcon key={i} skill={skill} />
+          <SkillIcon skillKey={i} skill={skill} />
         ))}
       </div>
     </section>

@@ -9,13 +9,13 @@ interface Skill {
 
 interface SkillIconProps {
   skill: Skill;
-  key: number;
+  skillKey: number;
 }
 
-const SkillIcon: React.FC<SkillIconProps> = ({ skill, key }) => {
+const SkillIcon: React.FC<SkillIconProps> = ({ skill, skillKey }) => {
   return (
     <div
-      key={key}
+      key={skillKey}
       style={{
         display: "flex",
         flexDirection: "column",

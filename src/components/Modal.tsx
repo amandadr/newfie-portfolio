@@ -55,6 +55,7 @@ const Modal: React.FC<ModalProps> = ({
     >
       <Image
         fit="cover"
+        loading="lazy"
         src={`${imageUrl}` || "/images/flower_1.jpeg"}
         style={{
           zIndex: 1,

@@ -39,6 +39,7 @@ const NavLink: React.FC<NavLinkProps> = (props) => {
       >
         <Image
           src={imageUrl}
+          loading="lazy"
           fit="cover"
           style={{
             position: "relative",

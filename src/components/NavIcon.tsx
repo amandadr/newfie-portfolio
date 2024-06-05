@@ -48,6 +48,7 @@ const NavIcon: React.FC<NavIconProps> = ({ imageUrl, label, hook }) => {
         >
           <Image
             src={imageUrl}
+            loading="lazy"
             fit="cover"
             style={{
               position: "relative",

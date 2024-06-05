@@ -32,8 +32,9 @@ const Details: React.FC<DetailsProps> = ({
       }}
     >
       <Image
-        src={bgImage || coppermine_2}
         fit="cover"
+        loading="lazy"
+        src={bgImage || coppermine_2}
         style={{
           width: "100%",
           height: "100%",
@@ -44,8 +45,9 @@ const Details: React.FC<DetailsProps> = ({
       />
       {highlightImage && (
         <Image
-          src={highlightImage || me_1}
           fit="contain"
+          loading="lazy"
+          src={highlightImage || me_1}
           style={{
             position: "absolute",
             width: "50%",
