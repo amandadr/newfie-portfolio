@@ -2,7 +2,7 @@ import dingus_1 from "/images/dingus_1.jpeg";
 import butters_1 from "/images/butters_1.jpeg";
 import butters_2 from "/images/butters_2.jpeg";
 import flower_4 from "/images/flower_4.jpeg";
-import flower_2 from "/images/flower_2.jpeg";
+import trees_2 from "/images/trees_2.jpeg";
 
 export const connectLinks = [
   {
@@ -42,7 +42,7 @@ export const workLinks = [
   },
   {
     imageUrl:
-      `${flower_2}` ||
+      `${trees_2}` ||
       "https://images.pexels.com/photos/11542288/pexels-photo-11542288.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
     label: "Email",
     target: "_blank",
