@@ -1,11 +1,18 @@
-import React, { useRef } from "react";
+import React from "react";
 import { Text, Card, CardPreview, Image } from "@fluentui/react-components";
+import NavLink from "./NavLink";
 import coppermine_2 from "/images/coppermine_2.jpeg";
 import me_1 from "/images/me_1.jpeg";
 
 interface DetailsProps {
   bgImage?: string;
   highlightImage?: string;
+  navLinks?: {
+    imageUrl: string;
+    label: string;
+    target?: string;
+    url: string;
+  }[];
   highlightPosition?: "left" | "right";
   header: string;
   previewText: string;
@@ -14,19 +21,23 @@ interface DetailsProps {
 const Details: React.FC<DetailsProps> = ({
   bgImage,
   highlightImage,
+  navLinks,
   highlightPosition,
   header,
   previewText,
 }) => {
-  const position = highlightPosition || (highlightImage ? "left" : undefined);
+  const position =
+    highlightPosition || "left";
+  const maxHeight = "60vh";
 
   return (
     <div
+      className="Details"
       style={{
         display: "flex",
         flexDirection: "row",
         justifyContent: "start",
-        height: "60vh",
+        height: `${maxHeight}`,
         width: "100%",
         position: "relative",
       }}
@@ -61,6 +72,30 @@ const Details: React.FC<DetailsProps> = ({
             right: position === "right" ? 0 : "auto",
           }}
         />
+      )}
+      {navLinks && (
+        <div
+          style={{
+            position: "absolute",
+            maxHeight: `${maxHeight}`,
+            height: "100%",
+            maxWidth: "50%",
+            width: "50%",
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+          }}
+        >
+          {navLinks.map((navLink, index) => (
+            <NavLink
+              key={index}
+              label={navLink.label}
+              target={navLink.target}
+              url={navLink.url}
+              imageUrl={navLink.imageUrl}
+            />
+          ))}
+        </div>
       )}
       <div
         style={{

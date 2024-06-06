@@ -20,8 +20,8 @@ const ContactPage: React.FC = () => {
         header="Looking good and need a solution?"
         previewText="I'm open to hear you out and talk about building something awesome together!"
         bgImage=""
+        navLinks={workLinks}
       />
-      <NavContainer navLinks={workLinks} />
       <Footer />
     </div>
   );
