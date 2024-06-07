@@ -1,4 +1,5 @@
 import React from "react";
+import LogoNav from "components/LogoNav";
 import Hero from "components/Hero";
 import Introduction from "components/Introduction";
 import NavContainer from "components/NavContainer";
@@ -13,8 +14,9 @@ import "../index.css";
 const HomePage: React.FC = () => {
 
   return (
-    <div className="HomePage">
+    <div className="HomePage" style={{ width: "100vw", height: "100vh" }}>
       <Images />
+      <LogoNav />
       <Hero imageUrl={coppermine_2} text="Whaddya hat, bh'y?" />
       <Introduction
         header="Hi, I'm Amanda Roy"
