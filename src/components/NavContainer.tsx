@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { Text } from "@fluentui/react-components";
-import NavIcon from "./NavIcon";
-import NavLink from "./NavLink";
-import Modal from "./Modal";
+import NavIcon from "components/NavIcon";
+import NavLink from "components/NavLink";
+import Modal from "components/Modal";
 import "../index.css";
 
 interface NavContainerProps {

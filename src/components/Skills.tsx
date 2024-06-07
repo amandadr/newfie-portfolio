@@ -1,6 +1,6 @@
 import React from "react";
 import { Image, Text } from "@fluentui/react-components";
-import SkillIcon from "./SkillIcon";
+import SkillIcon from "components/SkillIcon";
 
 interface Skill {
   color: string;

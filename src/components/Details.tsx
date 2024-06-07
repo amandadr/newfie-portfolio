@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Text, Card, CardPreview, Image } from "@fluentui/react-components";
-import NavLink from "./NavLink";
+import NavLink from "components/NavLink";
 import coppermine_2 from "/images/coppermine_2.jpeg";
 import me_1 from "/images/me_1.jpeg";
 
