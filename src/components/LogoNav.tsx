@@ -35,7 +35,7 @@ const LogoNav: React.FC<LogoNavProps> = ({ footerRef, currentPage }) => {
       const scrollTop = window.scrollY;
       const docHeight =
         document.documentElement.scrollHeight - window.innerHeight;
-      const scrollPercent = (scrollTop / docHeight) * 0.75; // Adjust the multiplier to control the fade window
+      const scrollPercent = (scrollTop / docHeight) * 2; // Adjust the multiplier to control the fade window
 
       setScrollDepth(scrollPercent);
 
