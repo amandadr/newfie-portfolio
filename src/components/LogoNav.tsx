@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState } from "react";
 import {
   Menu,
   MenuTrigger,
@@ -10,11 +10,22 @@ import {
 } from "@fluentui/react-components";
 import { Button } from "@fluentui/react-button";
 
+
+const menuItems = [
+  { key: "home", label: "Home", href: "/" },
+  { key: "about", label: "About", href: "/about" },
+  { key: "projects", label: "Projects", href: "/projects" },
+  { key: "contact", label: "Contact", href: "/contact" },
+];
+
+type MenuItemKey = "home" | "about" | "projects" | "contact";
+
 interface LogoNavProps {
   footerRef: React.RefObject<HTMLDivElement>;
+  currentPage: MenuItemKey;
 }
 
-const LogoNav: React.FC<LogoNavProps> = ({ footerRef }) => {
+const LogoNav: React.FC<LogoNavProps> = ({ footerRef, currentPage }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isFooterVisible, setIsFooterVisible] = useState(false);
   const [scrollDepth, setScrollDepth] = useState(0);
@@ -62,6 +73,10 @@ const LogoNav: React.FC<LogoNavProps> = ({ footerRef }) => {
     };
   }, [footerRef]);
 
+  const filteredMenuItems = menuItems.filter(
+    (item) => item.key !== currentPage
+  );
+
   return (
     <div
       style={{
@@ -104,26 +119,13 @@ const LogoNav: React.FC<LogoNavProps> = ({ footerRef }) => {
         </div>
         <MenuPopover>
           <MenuList>
-            <MenuItem key="home">
-              <Link appearance="subtle" href="/">
-                Home
-              </Link>
-            </MenuItem>
-            <MenuItem key="about">
-              <Link appearance="subtle" href="/about">
-                About
-              </Link>
-            </MenuItem>
-            <MenuItem key="projects">
-              <Link appearance="subtle" href="/projects">
-                Projects
-              </Link>
-            </MenuItem>
-            <MenuItem key="contact">
-              <Link appearance="subtle" href="/contact">
-                Contact
-              </Link>
-            </MenuItem>
+            {filteredMenuItems.map((item) => (
+              <MenuItem key={item.key}>
+                <Link appearance="subtle" href={item.href} target="_self">
+                  {item.label}
+                </Link>
+              </MenuItem>
+            ))}
           </MenuList>
         </MenuPopover>
       </Menu>
