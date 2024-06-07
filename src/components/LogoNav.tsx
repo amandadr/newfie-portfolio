@@ -10,7 +10,6 @@ import {
 } from "@fluentui/react-components";
 import { Button } from "@fluentui/react-button";
 
-
 const menuItems = [
   { key: "home", label: "Home", href: "/" },
   { key: "about", label: "About", href: "/about" },
@@ -82,10 +81,14 @@ const LogoNav: React.FC<LogoNavProps> = ({ footerRef, currentPage }) => {
       style={{
         position: "fixed",
         zIndex: 25,
-        width: "100%",
-        maxWidth: "100%",
-        height: "100vh",
-        maxHeight: "100vh",
+        marginLeft: "1.5em",
+        marginTop: "1.5em",
+        minWidth: "5%",
+        minHeight: "5%",
+        maxWidth: "15%",
+        maxHeight: "15%",
+        width: "2em",
+        height: "2em",
         display: isFooterVisible ? "none" : "flex",
         flexDirection: "column",
         justifyContent: "start",
@@ -95,18 +98,7 @@ const LogoNav: React.FC<LogoNavProps> = ({ footerRef, currentPage }) => {
       }}
     >
       <Menu>
-        <div
-          style={{
-            marginLeft: "1.5em",
-            marginTop: "1.5em",
-            minWidth: "5%",
-            minHeight: "5%",
-            maxWidth: "15%",
-            maxHeight: "15%",
-            width: "2em",
-            height: "2em",
-          }}
-        >
+        <div>
           <MenuTrigger>
             <Button style={{ padding: 0, margin: 0 }}>
               <Image
@@ -120,11 +112,9 @@ const LogoNav: React.FC<LogoNavProps> = ({ footerRef, currentPage }) => {
         <MenuPopover>
           <MenuList>
             {filteredMenuItems.map((item) => (
-              <MenuItem key={item.key}>
-                <Link appearance="subtle" href={item.href} target="_self">
-                  {item.label}
-                </Link>
-              </MenuItem>
+              <Link appearance="subtle" href={item.href} target="_self">
+                <MenuItem key={item.key}>{item.label}</MenuItem>
+              </Link>
             ))}
           </MenuList>
         </MenuPopover>
