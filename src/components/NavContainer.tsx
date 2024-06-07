@@ -14,9 +14,9 @@ interface NavContainerProps {
       header: string;
       content: string;
       modalUrl?: string;
-      images: string[];
+      images?: string[];
       liveUrl?: string;
-      githubUrl: string;
+      githubUrl?: string;
       techStack?: { class: string; name: string }[];
     };
   }[];
