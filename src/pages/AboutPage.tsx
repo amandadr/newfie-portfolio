@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useRef} from "react";
 import Hero from "components/Hero";
 import Divider from "components/Divider";
 import Details from "components/Details";
@@ -12,10 +12,14 @@ import beach_2 from "/images/beach_2.jpeg";
 import me_1 from "/images/me_1.jpeg";
 import gorge_1 from "/images/gorge_1.jpeg";
 import { expIcons, skills } from "data/AboutPage";
+import LogoNav from "@/components/LogoNav";
 
 const AboutPage: React.FC = () => {
+  const footerRef = useRef<HTMLDivElement>(null);
+
   return (
     <div className="AboutPage">
+      <LogoNav footerRef={footerRef} currentPage="about" />
       <Hero text="Who Knit You?" imageUrl={fire} />
       <Divider outline={true} />
       <Details
@@ -46,7 +50,7 @@ const AboutPage: React.FC = () => {
         highlightPosition="right"
       />
       <Divider outline={true} />
-      <Footer imageUrl={flower_3} />
+      <Footer ref={footerRef} imageUrl={flower_3} />
     </div>
   );
 };
