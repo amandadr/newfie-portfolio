@@ -12,18 +12,17 @@ interface HeroProps {
 const Hero: React.FC<HeroProps> = (props) => {
   const { imageUrl, text } = props;
   return (
-    <Stack
+    <div
       className="Hero"
-      styles={{
-        root: {
-          height: "100vh",
-          width: "100%",
-          margin: 0,
-          padding: 0,
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-        },
+      style={{
+        position: "relative",
+        height: "100%",
+        width: "100%",
+        margin: 0,
+        padding: 0,
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
       }}
     >
       <Image
@@ -44,17 +43,14 @@ const Hero: React.FC<HeroProps> = (props) => {
           outlineOffset: "-0.5em",
         }}
       />
-      <Stack
-        horizontalAlign="center"
-        verticalAlign="center"
-        styles={{
-          root: {
-            position: "absolute",
-            top: 0,
-            left: 0,
-            right: 0,
-            bottom: 0,
-          },
+      <div
+        style={{
+          position: "absolute",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          width: "100%",
+          height: "100%",
         }}
       >
         <Text
@@ -69,8 +65,8 @@ const Hero: React.FC<HeroProps> = (props) => {
         >
           {text || "Welcome to my portfolio!"}
         </Text>
-      </Stack>
-    </Stack>
+      </div>
+    </div>
   );
 };
 

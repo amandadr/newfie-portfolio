@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React from "react";
 import {
   Text,
   Card,
@@ -15,43 +15,13 @@ interface IntroductionProps {
 }
 
 const Introduction: React.FC<IntroductionProps> = ({ header, previewText, imageUrl }) => {
-  const introductionRef = useRef<HTMLDivElement | null>(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("animate__animated", "animate__fadeIn");
-        } else {
-          setTimeout(() => {
-            entry.target.classList.remove(
-              "animate__animated",
-              "animate__fadeIn"
-            );
-          }, 1000);
-        }
-      },
-      { threshold: 0.2 }
-    );
-
-    if (introductionRef.current) {
-      observer.observe(introductionRef.current);
-    }
-
-    return () => {
-      if (introductionRef.current) {
-        observer.unobserve(introductionRef.current);
-      }
-    };
-  }, []);
 
   return (
     <div
-      ref={introductionRef}
       style={{
         position: "relative",
-        height: "100vh",
-        minWidth: "100vw",
+        height: "100%",
+        width: "100%",
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
