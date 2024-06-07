@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Text, Card, CardPreview, Image } from "@fluentui/react-components";
 import NavLink from "./NavLink";
 import coppermine_2 from "/images/coppermine_2.jpeg";
@@ -26,9 +26,26 @@ const Details: React.FC<DetailsProps> = ({
   header,
   previewText,
 }) => {
-  const position =
-    highlightPosition || "left";
+  const position = highlightPosition || "left";
   const maxHeight = "60vh";
+  const [isHorizontal, setIsHorizontal] = useState(false);
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const updateLayout = () => {
+      if (containerRef.current) {
+        const { offsetWidth, offsetHeight } = containerRef.current;
+        setIsHorizontal(offsetWidth > offsetHeight);
+      }
+    };
+
+    updateLayout();
+    window.addEventListener("resize", updateLayout);
+
+    return () => {
+      window.removeEventListener("resize", updateLayout);
+    };
+  }, []);
 
   return (
     <div
@@ -75,6 +92,7 @@ const Details: React.FC<DetailsProps> = ({
       )}
       {navLinks && (
         <div
+          ref={containerRef}
           style={{
             position: "absolute",
             maxHeight: `${maxHeight}`,
@@ -82,8 +100,10 @@ const Details: React.FC<DetailsProps> = ({
             maxWidth: "50%",
             width: "50%",
             display: "flex",
-            flexDirection: "column",
+            flexDirection: isHorizontal ? "row" : "column",
+            flexWrap: "wrap",
             alignItems: "center",
+            justifyContent: "center",
           }}
         >
           {navLinks.map((navLink, index) => (
