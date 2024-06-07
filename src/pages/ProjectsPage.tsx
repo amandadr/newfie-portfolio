@@ -13,7 +13,10 @@ const ProjectsPage: React.FC = () => {
   const footerRef = useRef<HTMLDivElement>(null);
 
   return (
-    <section className="ProjectsPage">
+    <section
+      className="ProjectsPage"
+      style={{ width: "100vw", height: "100vh" }}
+    >
       <LogoNav footerRef={footerRef} currentPage="projects" />
       <Hero text="Projects" imageUrl={gorge_2} />
       <Introduction

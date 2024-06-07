@@ -11,7 +11,7 @@ const ContactPage: React.FC = () => {
   const footerRef = useRef<HTMLDivElement>(null);
 
   return (
-    <div className="ContactPage">
+    <div className="ContactPage" style={{ width: "100vw", height: "100vh" }}>
       <LogoNav footerRef={footerRef} currentPage="contact" />
       <Hero />
       <Details
