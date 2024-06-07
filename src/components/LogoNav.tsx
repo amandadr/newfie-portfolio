@@ -17,10 +17,18 @@ interface LogoNavProps {
 const LogoNav: React.FC<LogoNavProps> = ({ footerRef }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isFooterVisible, setIsFooterVisible] = useState(false);
+  const [scrollDepth, setScrollDepth] = useState(0);
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 0) {
+      const scrollTop = window.scrollY;
+      const docHeight =
+        document.documentElement.scrollHeight - window.innerHeight;
+      const scrollPercent = (scrollTop / docHeight) * 0.75; // Adjust the multiplier to control the fade window
+
+      setScrollDepth(scrollPercent);
+
+      if (scrollTop > 0) {
         setIsScrolled(true);
       } else {
         setIsScrolled(false);
@@ -68,7 +76,7 @@ const LogoNav: React.FC<LogoNavProps> = ({ footerRef }) => {
         justifyContent: "start",
         alignItems: "start",
         transition: "opacity 0.5s ease",
-        opacity: isScrolled ? 0.8 : 1,
+        opacity: isScrolled ? Math.max(0.5, 1 - scrollDepth) : 1,
       }}
     >
       <Menu>
