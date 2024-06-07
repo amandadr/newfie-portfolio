@@ -1,4 +1,4 @@
-import React from "react";
+import React, { forwardRef } from "react";
 import { Stack } from "@fluentui/react";
 import { Image, Text } from "@fluentui/react-components";
 import FooterLogo from "components/FooterLogo";
@@ -9,11 +9,12 @@ interface FooterProps {
   imageUrl?: string;
 }
 
-const Footer: React.FC<FooterProps> = ({ imageUrl }) => {
+const Footer = forwardRef<HTMLDivElement, FooterProps>(({ imageUrl }, ref) => {
   const currentYear = new Date().getFullYear();
 
   return (
     <footer
+      ref={ref}
       className="Footer"
       style={{
         position: "relative",
@@ -85,6 +86,6 @@ const Footer: React.FC<FooterProps> = ({ imageUrl }) => {
       </Stack>
     </footer>
   );
-};
+});
 
 export default Footer;

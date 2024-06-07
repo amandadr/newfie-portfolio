@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import LogoNav from "components/LogoNav";
 import Hero from "components/Hero";
 import Introduction from "components/Introduction";
@@ -12,11 +12,12 @@ import sky_1 from "/images/sky_1.jpeg";
 import "../index.css";
 
 const HomePage: React.FC = () => {
+  const footerRef = useRef<HTMLDivElement>(null);
 
   return (
     <div className="HomePage" style={{ width: "100vw", height: "100vh" }}>
       <Images />
-      <LogoNav />
+      <LogoNav footerRef={footerRef} />
       <Hero imageUrl={coppermine_2} text="Whaddya hat, bh'y?" />
       <Introduction
         header="Hi, I'm Amanda Roy"
@@ -24,7 +25,7 @@ const HomePage: React.FC = () => {
         imageUrl={gorge_2}
       />
       <NavContainer navLinks={homeLinks} />
-      <Footer imageUrl={sky_1} />
+      <Footer ref={footerRef} imageUrl={sky_1} />
     </div>
   );
 };

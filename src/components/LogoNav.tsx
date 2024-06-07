@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import {
   Menu,
   MenuTrigger,
@@ -10,8 +10,13 @@ import {
 } from "@fluentui/react-components";
 import { Button } from "@fluentui/react-button";
 
-const LogoNav: React.FC = () => {
+interface LogoNavProps {
+  footerRef: React.RefObject<HTMLDivElement>;
+}
+
+const LogoNav: React.FC<LogoNavProps> = ({ footerRef }) => {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isFooterVisible, setIsFooterVisible] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -28,6 +33,27 @@ const LogoNav: React.FC = () => {
     };
   }, []);
 
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          setIsFooterVisible(entry.isIntersecting);
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    if (footerRef.current) {
+      observer.observe(footerRef.current);
+    }
+
+    return () => {
+      if (footerRef.current) {
+        observer.unobserve(footerRef.current);
+      }
+    };
+  }, [footerRef]);
+
   return (
     <div
       style={{
@@ -37,7 +63,7 @@ const LogoNav: React.FC = () => {
         maxWidth: "100%",
         height: "100vh",
         maxHeight: "100vh",
-        display: "flex",
+        display: isFooterVisible ? "none" : "flex",
         flexDirection: "column",
         justifyContent: "start",
         alignItems: "start",
