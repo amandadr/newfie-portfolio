@@ -19,8 +19,8 @@ const NavLink: React.FC<NavLinkProps> = (props) => {
         display: "flex",
         flex: "1 1",
         minWidth: "33.33%",
-        // maxWidth: "66.66%",
-        maxHeight: "50%",
+        maxWidth: "50%",
+        maxHeight: "50%" && "50vh",
         aspectRatio: "1/1",
       }}
     >

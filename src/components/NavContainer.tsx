@@ -46,9 +46,8 @@ const NavContainer: React.FC<NavContainerProps> = (props) => {
       className="NavContainer"
       id="NavContainer"
       style={{
-        minWidth: "100vw",
         maxWidth: "100vw",
-        height: "max-content",
+        maxHeight: "100vh",
         backgroundColor: "rgba(0, 0, 0, 0.5)",
         display: "flex",
         flexDirection: "column",

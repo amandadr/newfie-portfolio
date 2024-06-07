@@ -27,9 +27,9 @@ const NavIcon: React.FC<NavIconProps> = ({ imageUrl, label, hook }) => {
         className="NavIcon"
         style={{
           display: "flex",
-          flex: "1",
+          flex: "1 1",
           minWidth: "33.33%",
-          maxWidth: "66.66%",
+          maxHeight: "50%",
           aspectRatio: "1/1",
         }}
         onClick={hook}
