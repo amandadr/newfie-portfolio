@@ -1,6 +1,7 @@
 import React from "react";
 import { Stack } from "@fluentui/react";
-import { Image, Link, Text } from "@fluentui/react-components";
+import { Image, Text } from "@fluentui/react-components";
+import FooterLogo from "components/FooterLogo";
 import FooterNav from "components/FooterNav";
 import green_gardens from "/images/green_gardens.jpeg";
 
@@ -53,22 +54,7 @@ const Footer: React.FC<FooterProps> = ({ imageUrl }) => {
           marginLeft: "2%",
         }}
       >
-        <Link as="a" href="/" target="" style={{ height: "100%" }}>
-          <Image
-            shadow
-            loading="lazy"
-            src="/favicon.ico"
-            alt="Logo"
-            style={{
-              aspectRatio: "1/1",
-              height: "100%",
-              width: "100%",
-              border: "1px solid rgb(40, 40, 40, 0.3)",
-              boxShadow:
-                "0 0 10px 5px rgb(40, 40, 40, 0.3), 0 0 10px 5px rgb(40, 40, 40, 0.3)",
-            }}
-          />
-        </Link>
+        <FooterLogo />
       </Stack>
       <Stack
         style={{
