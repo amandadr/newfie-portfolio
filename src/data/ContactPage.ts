@@ -38,7 +38,7 @@ export const workLinks = [
       "https://images.pexels.com/photos/9011357/pexels-photo-9011357.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
     label: "Resume",
     target: "_blank",
-    url: "https://www.linkedin.com/in/amandadroy/",
+    url: "https://resume.amandadroy.com/",
   },
   {
     imageUrl:
