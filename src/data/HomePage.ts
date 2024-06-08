@@ -1,9 +1,5 @@
-import butters_2 from "/images/butters_2.jpeg";
-import rock from "/images/rock.jpeg";
-import flower_2 from "/images/flower_2.jpeg";
-import flower_4 from "/images/flower_4.jpeg";
-import dingus_1 from "/images/dingus_1.jpeg";
-import butters_1 from "/images/butters_1.jpeg";
+import images from "data/Images";
+const { butters_2, rock, flower_2, flower_4, dingus_1, butters_1 } = images;
 
 export const homeLinks = [
   {

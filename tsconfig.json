@@ -1,7 +1,11 @@
 {
   "compilerOptions": {
     "target": "ESNext",
-    "lib": ["dom", "dom.iterable", "esnext"],
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
     "allowJs": false,
     "skipLibCheck": true,
     "esModuleInterop": true,
@@ -14,19 +18,45 @@
     "isolatedModules": true,
     "noEmit": true,
     "noFallthroughCasesInSwitch": true,
-    "jsx": "react-jsx",
-    "types": ["vite/client", "vite-plugin-svgr/client"],
+    "jsx": "preserve",
     "paths": {
-      "public/*": ["./public/*"],
-      "icons/*": ["./public/icons/*"],
-      "images/*": ["./public/images/*"],
-      "@/*": ["./src/*"],
-      "components/*": ["./src/components/*"],
-      "data/*": ["./src/data/*"],
-      "pages/*": ["./src/pages/*"],
-      "utils/*": ["./src/utils/*"],
-      "hooks/*": ["./src/utils/hooks/*"],
-    }
+      "public/*": [
+        "./public/*"
+      ],
+      "icons/*": [
+        "./public/icons/*"
+      ],
+      "@/*": [
+        "./src/*"
+      ],
+      "components/*": [
+        "./src/app/components/*"
+      ],
+      "data/*": [
+        "./src/data/*"
+      ],
+      "pages/*": [
+        "./src/pages/*"
+      ],
+      "utils/*": [
+        "./src/utils/*"
+      ],
+      "hooks/*": [
+        "./src/utils/hooks/*"
+      ]
+    },
+    "incremental": true,
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ]
   },
-  "include": ["src"]
+  "include": [
+    "src",
+    ".next/types/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
 }

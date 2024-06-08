@@ -1,3 +1,6 @@
+import images from "data/Images";
+const { ddq_p1, ddq_p2, ddq_p3, hyrule_p1, hyrule_p2, hyrule_p3, hyrule_p4, lift_p1, lift_p2, lift_p3, lift_p4, lift_p5, lift_p6, petome_p1, petome_p2, petome_p3, photolabs_p1, photolabs_p2, photolabs_p3, pyshelf_p1, pyshelf_p2, pyshelf_p3, pyshelf_p4, weather_p1, weather_p2 } = images;
+
 export const projectDetails = [
   {
     title: "Personal Portfolio // This One!",
@@ -36,11 +39,7 @@ export const projectDetails = [
     description:
       "This is an app quickly built for a demand; my groggy brain ached and my caffeinated brain answered. I grew tired of wasting morning light counting and staring blankly at my fingers atop the Goodlife Fitness platforms, so I created a simple app full of calculators to do the hard work for me. Now I can truly focus on lifting things up then putting them down over and over! (Live in link)",
     images: [
-      "/images/projects/lift/p1.jpg",
-      "/images/projects/lift/p2.jpg",
-      "/images/projects/lift/p3.jpg",
-      "/images/projects/lift/p4.jpg",
-      "/images/projects/lift/p5.jpg",
+      lift_p1, lift_p2, lift_p3, lift_p4, lift_p5, lift_p6
     ],
     liveUrl: "https://lift.amandadroy.com/",
     githubUrl: "https://github.com/amandadr/lift-off",
@@ -65,8 +64,7 @@ export const projectDetails = [
     description:
       "The name is apt - a simple weather app that uses the OpenWeatherMap API to display current conditions and a short forecast for a given location (starting with mine!). This was my first time using Vue, so I set a simple goal of handling data and displaying it in a clean, user-friendly way. I'll continue to edit this app as a way to challenge my HTML/CSS skills. (Live in link)",
     images: [
-      "/images/projects/weather/p1.jpg",
-      "/images/projects/weather/p2.jpg",
+      weather_p1, weather_p2
     ],
     liveUrl: "https://weather.amandadroy.com/",
     githubUrl: "https://github.com/amandadr/simple-weather",
@@ -91,10 +89,7 @@ export const projectDetails = [
     description:
       "An **IN PROGRESS** Python-based web app that utilizes the Google Books API to track reading progress and discover new books. This is my first Python app! I also learned a lot about Flask and SQLAlchemy while building. There are many more features to come! (Live in link)",
     images: [
-      "/images/projects/pyshelf/p1.jpg",
-      "/images/projects/pyshelf/p2.jpg",
-      "/images/projects/pyshelf/p3.jpg",
-      "/images/projects/pyshelf/p4.jpg",
+      pyshelf_p1, pyshelf_p2, pyshelf_p3, pyshelf_p4
     ],
     liveUrl: "https://pyshelf.amandadroy.com/",
     githubUrl: "https://github.com/amandadr/pycrud",
@@ -119,10 +114,7 @@ export const projectDetails = [
     description:
       "A React SPA that features interactive browsing of items found in The Legend of Zelda: Breath of the Wild. This is app utilizes data from a publically hosted API and a Lambda hosted, Python crafted fuzzysearch function! (Live in link)",
     images: [
-      "/images/projects/hyrule/p1.jpg",
-      "/images/projects/hyrule/p2.jpg",
-      "/images/projects/hyrule/p3.jpg",
-      "/images/projects/hyrule/p4.jpg",
+      hyrule_p1, hyrule_p2, hyrule_p3, hyrule_p4
     ],
     liveUrl: "https://hyrule.amandadroy.com/",
     githubUrl: "https://github.com/amandadr/hyrule-compendium",
@@ -155,9 +147,7 @@ export const projectDetails = [
     description:
       "The most fun I've had creating a web app (so far!). I deepened my understanding of React state, reducers, and hooks, as well as asynchronous data handling throughout this project. I'm proud of the clean, simple interface and the seamlessness of play- but there's still a long way to go with this one! (Live in link)",
     images: [
-      "/images/projects/petome/p1.jpg",
-      "/images/projects/petome/p2.jpg",
-      "/images/projects/petome/p3.jpg",
+      petome_p1, petome_p2, petome_p3
     ],
     liveUrl: "https://petome.amandadroy.com/",
     githubUrl: "https://github.com/amandadr/petome",
@@ -182,9 +172,7 @@ export const projectDetails = [
     description:
       "My first SPA using React which mimics a very simple Instagram. I learned a lot about React state and using components to create a clean, simple interface using modals. I also learned a lot about the importance of planning and wireframing before diving into code, and even experienced my first love-hate relationship with a button.",
     images: [
-      "/images/projects/photolabs/p1.jpg",
-      "/images/projects/photolabs/p2.jpg",
-      "/images/projects/photolabs/p3.jpg",
+      photolabs_p1, photolabs_p2, photolabs_p3
     ],
     githubUrl: "https://github.com/amandadr/photolabs",
     technologies: [
@@ -204,9 +192,7 @@ export const projectDetails = [
     description:
       "One of the first apps I was working on during my diploma. I had to work with a teammate to build a functioning resource wall (ie Pinterest) under a timecrunch deadline of one week. I've learned a lot about communicating since then!",
     images: [
-      "/images/projects/ddq/p1.jpg",
-      "/images/projects/ddq/p2.jpg",
-      "/images/projects/ddq/p3.jpg",
+      ddq_p1, ddq_p2, ddq_p3
     ],
     githubUrl: "https://github.com/amandadr/midterm-project",
     technologies: [

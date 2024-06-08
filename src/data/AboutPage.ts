@@ -1,32 +1,35 @@
+import images from "./Images";
+const { mac_search, da_tech, bootcamp, flower_1, flower_2, flower_4 } = images;
+
 export const expIcons = [
   {
-    imageUrl: "/images/mac_search.jpeg",
+    imageUrl: mac_search,
     label: "MacMillan Search",
     details: {
       date: "April, 2024 - Present",
       header: "Junior SEO Specialist and Automation Developer",
       content: "An SEO company.",
-      modalUrl: "/images/flower_1.jpeg",
+      modalUrl: flower_1,
     },
   },
   {
-    imageUrl: "/images/da_tech.jpeg",
+    imageUrl: da_tech,
     label: "DataAnnotation Tech",
     details: {
       date: "January, 2024 - Present",
       header: "Machine Learning Research Developer",
       content: "An LLM data company.",
-      modalUrl: "/images/flower_2.jpeg",
+      modalUrl: flower_2,
     },
   },
   {
-    imageUrl: "/images/bootcamp.jpeg",
+    imageUrl: bootcamp,
     label: "Lighthouse Labs",
     details: {
       date: "September - December, 2023",
       header: "Full Stack Web Development Graduate",
       content: "A Canadian coding bootcamp.",
-      modalUrl: "/images/flower_4.jpeg",
+      modalUrl: flower_4,
     },
   },
 ];

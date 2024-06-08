@@ -1,8 +1,5 @@
-import dingus_1 from "/images/dingus_1.jpeg";
-import butters_1 from "/images/butters_1.jpeg";
-import butters_2 from "/images/butters_2.jpeg";
-import flower_4 from "/images/flower_4.jpeg";
-import trees_2 from "/images/trees_2.jpeg";
+import images from "data/Images";
+const { butters_1, dingus_1, butters_2, flower_4, trees_2 } = images;
 
 export const connectLinks = [
   {
