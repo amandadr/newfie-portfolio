@@ -1,15 +1,12 @@
-"use client";
 import React, { useEffect, useState } from "react";
 import {
-  Menu,
-  MenuTrigger,
-  MenuList,
-  MenuItem,
-  MenuPopover,
-  Link,
+  Dropdown,
+  DropdownTrigger,
+  DropdownMenu,
+  DropdownItem,
+  Button,
   Image,
-  Button
-} from "@fluentui/react-components";
+} from "@nextui-org/react";
 
 const menuItems = [
   { key: "home", label: "Home", href: "/" },
@@ -19,7 +16,6 @@ const menuItems = [
 ];
 
 type MenuItemKey = "home" | "about" | "projects" | "contact";
-
 interface LogoNavProps {
   footerRef: React.RefObject<HTMLDivElement>;
   currentPage: MenuItemKey;
@@ -84,12 +80,10 @@ const LogoNav: React.FC<LogoNavProps> = ({ footerRef, currentPage }) => {
         zIndex: 25,
         marginLeft: "1.5em",
         marginTop: "1.5em",
-        minWidth: "5%",
+        aspectRatio: "1/1",
         minHeight: "5%",
-        maxWidth: "15%",
         maxHeight: "15%",
-        width: "2em",
-        height: "2em",
+        height: "4em",
         display: isFooterVisible ? "none" : "flex",
         flexDirection: "column",
         justifyContent: "start",
@@ -98,28 +92,28 @@ const LogoNav: React.FC<LogoNavProps> = ({ footerRef, currentPage }) => {
         opacity: isScrolled ? Math.max(0.5, 1 - scrollDepth) : 1,
       }}
     >
-      <Menu>
-        <div>
-          <MenuTrigger>
-            <Button style={{ padding: 0, margin: 0 }}>
-              <Image
-                src="/favicon.ico"
-                alt="LogoNav"
-                style={{ width: "100%", height: "100%" }}
-              />
-            </Button>
-          </MenuTrigger>
-        </div>
-        <MenuPopover>
-          <MenuList>
-            {filteredMenuItems.map((item) => (
-              <Link key={item.key} appearance="subtle" href={item.href} target="_self">
-                <MenuItem key={item.key}>{item.label}</MenuItem>
-              </Link>
-            ))}
-          </MenuList>
-        </MenuPopover>
-      </Menu>
+      <Dropdown className="flex h-[100%] w-[100%]">
+        <DropdownTrigger className="flex h-[100%] w-[100%]">
+          <Button
+            isIconOnly
+            aria-label="Menu"
+            className="flex h-[100%] w-[100%]"
+          >
+            <Image
+              src="/favicon.ico"
+              alt="LogoNav"
+              className="flex h-[100%] w-[100%]"
+            />
+          </Button>
+        </DropdownTrigger>
+        <DropdownMenu aria-label="Static Actions">
+          {filteredMenuItems.map((item) => (
+            <DropdownItem key={item.key} href={item.href} color="success">
+              {item.label}
+            </DropdownItem>
+          ))}
+        </DropdownMenu>
+      </Dropdown>
     </div>
   );
 };

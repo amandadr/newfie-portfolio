@@ -23,8 +23,8 @@ const AboutPage: React.FC = () => {
       <Details
         header="About Me"
         previewText="I am a software developer with a passion for learning. I am currently working on a project that will help people learn about how I code. It has nothing to do with knitting."
-        bgImage={beach_2}
-        highlightImage={me_1}
+        bgImage={"beach_2.jpeg"}
+        highlightImage={"me_1.jpeg"}
         highlightPosition="right"
       />
       <Divider outline={true} width="0.5em" />
@@ -33,8 +33,8 @@ const AboutPage: React.FC = () => {
       <Details
         header="What I Believe In"
         previewText="I believe in the power of learning and the importance of sharing knowledge. I believe that everyone has the potential to learn and grow."
-        bgImage={"/images/flower_2.jpeg"}
-        highlightImage={"/images/trees_2.jpeg"}
+        bgImage={"flower_2.jpeg"}
+        highlightImage={"trees_2.jpeg"}
         highlightPosition="left"
       />
       <Divider outline={true} />
@@ -43,8 +43,8 @@ const AboutPage: React.FC = () => {
       <Details
         header="Dreams for the Future"
         previewText="I dream of a world where everyone has access to the tools they need to learn and grow. I dream of a world where everyone has the opportunity to reach their full potential."
-        bgImage={"/images/river.jpeg"}
-        highlightImage="/images/trees_3.jpeg"
+        bgImage={"river.jpeg"}
+        highlightImage="trees_3.jpeg"
         highlightPosition="right"
       />
       <Divider outline={true} />
