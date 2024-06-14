@@ -26,7 +26,7 @@ const ProjectsPage: React.FC = () => {
         imageUrl=""
       />
       <NavContainer navIcons={projectIcons} />
-      <Footer ref={footerRef} imageUrl={field} />
+      <Footer ref={footerRef} imageUrl={"field.jpeg"} />
     </section>
   );
 };

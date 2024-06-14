@@ -1,12 +1,8 @@
 "use client";
 import React, { forwardRef } from "react";
-import { Stack } from "@fluentui/react";
-import { Image, Text } from "@fluentui/react-components";
+import Image from "next/image";
 import FooterLogo from "components/FooterLogo";
 import FooterNav from "components/FooterNav";
-
-import images from "data/Images";
-const { green_gardens } = images;
 
 interface FooterProps {
   imageUrl?: string;
@@ -18,75 +14,30 @@ const Footer = forwardRef<HTMLDivElement, FooterProps>(({ imageUrl }, ref) => {
   return (
     <footer
       ref={ref}
-      className="Footer"
-      style={{
-        position: "relative",
-        zIndex: "1",
-        display: "flex",
-        height: "20vh",
-        maxHeight: "25em",
-        width: "100%",
-        flexDirection: "row",
-        justifyContent: "space-between",
-        alignItems: "center",
-        backgroundColor: "#3d3d3d",
-        color: "#fff",
-      }}
+      className="Footer relative z-1 flex flex-row justify-between items-center bg-dark text-white h-[20vh] max-h-[25em] w-full"
     >
       <Image
-        src={imageUrl || green_gardens}
-        loading="lazy"
         alt="Background"
-        fit="cover"
-        style={{
-          position: "absolute",
-          top: 0,
-          left: 0,
-          width: "100%",
-          height: "100%",
-          zIndex: -1,
-        }}
+        src={imageUrl || "green_gardens.jpeg"}
+        layout="fill"
+        objectFit="cover"
+        className="absolute top-0 left-0 w-full h-full z-[-1]"
       />
-      <Stack
-        style={{
-          height: "50%",
-          maxWidth: "50%",
-          backgroundColor: "#ddd",
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          marginLeft: "2%",
-        }}
+      <div
+      className="h-[50%] max-w-[50%] bg-gray-300 flex justify-center items-center ml-[2%]"
       >
         <FooterLogo />
-      </Stack>
-      <Stack
-        style={{
-          height: "90%",
-          width: "35%",
-          maxWidth: "50%",
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "flex-end",
-          justifyContent: "space-around",
-          marginRight: "2%",
-          marginBottom: "2%",
-        }}
+      </div>
+      <div
+      className="h-[90%] w-[35%] max-w-[50%] flex flex-col items-end justify-around mr-[2%] mb-[2%]"
       >
         <FooterNav />
-        <Text
-          size={300}
-          align="end"
-          style={{
-            marginTop: "5%",
-            backgroundColor: "rgba(50, 50, 50, 0.45)",
-            borderRadius: "10px",
-            paddingInline: "3%",
-          }}
+        <div
+          className="text-white text-lg font-bold text-center mt-[5%] bg-[rgba(50,50,50,0.45)] rounded-[10px] px-[3%]"
         >
           © {currentYear} Amanda Roy
-        </Text>
-      </Stack>
+        </div>
+      </div>
     </footer>
   );
 });

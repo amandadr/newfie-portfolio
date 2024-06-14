@@ -48,7 +48,7 @@ const AboutPage: React.FC = () => {
         highlightPosition="right"
       />
       <Divider outline={true} />
-      <Footer ref={footerRef} imageUrl={flower_3} />
+      <Footer ref={footerRef} imageUrl={"flower_3.jpeg"} />
     </div>
   );
 };

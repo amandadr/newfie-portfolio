@@ -25,7 +25,7 @@ const HomePage: React.FC = () => {
         imageUrl={gorge_2}
       />
       <NavContainer navLinks={homeLinks} />
-      <Footer ref={footerRef} imageUrl={sky_1} />
+      <Footer ref={footerRef} imageUrl={"sky_1.jpeg"} />
     </div>
   );
 };
