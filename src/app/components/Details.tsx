@@ -1,10 +1,8 @@
 "use client";
 import React, { useState, useEffect, useRef } from "react";
-import { Text, Card, CardPreview, Image } from "@fluentui/react-components";
+import { Card, CardHeader, CardBody } from "@nextui-org/react";
+import Image from "next/image";
 import NavLink from "components/NavLink";
-
-import images from "data/Images";
-const { coppermine_2, me_1 } = images;
 
 interface DetailsProps {
   bgImage?: string;
@@ -51,62 +49,53 @@ const Details: React.FC<DetailsProps> = ({
 
   return (
     <div
-      className="Details"
-      style={{
-        display: "flex",
-        flexDirection: "row",
-        justifyContent: "start",
-        height: `${maxHeight}`,
-        width: "100%",
-        position: "relative",
-      }}
+      className={
+        "Details relative w-[100vw] bg-[transparent] flex flex-row justify-start overflow-hidden" +
+        " " +
+        `h-[${maxHeight}]`
+      }
     >
       <Image
-        fit="cover"
-        loading="lazy"
-        src={bgImage || coppermine_2}
-        style={{
-          width: "100%",
-          height: "100%",
-          filter: "brightness(0.85)",
-          outline: "0.5em inset rgba(70, 70, 70, 0.1)",
-          outlineOffset: "-0.5em",
-        }}
+        alt=","
+        src={bgImage || "coppermine_2.jpeg"}
+        layout="fill"
+        objectFit="cover"
+        className="relative filter brightness-[0.85] z-1 w-[100vw] h-[60vh] outline-[0.5em] inset-[rgba(70,70,70,0.1)] outline-offset-[-0.5em]"
       />
       {highlightImage && (
-        <Image
-          fit="contain"
-          loading="lazy"
-          src={highlightImage || me_1}
-          style={{
-            position: "absolute",
-            width: "50%",
-            height: "100%",
-            outline: "0.5em inset rgba(70, 70, 70, 0.1)",
-            outlineOffset: "-0.5em",
-            borderRadius:
-              position === "left" ? "0 0.2em 0.2em 0" : "0.2em 0 0 0.2em",
-            backgroundColor: "rgba(70, 70, 70, 0.75)",
-            left: position === "left" ? 0 : "auto",
-            right: position === "right" ? 0 : "auto",
-          }}
-        />
+        <div
+          ref={containerRef}
+          className={
+            "absolute w-[50%] min-h-[100%] flex items-center justify-center z-2 bg-[rgba(70,70,70,0.75)]" +
+            " " +
+            (position === "left" ? "left-0" : "right-0")
+          }
+        >
+          <Image
+            alt=","
+            src={highlightImage || "me_1.jpeg"}
+            layout="responsive"
+            width={500}
+            height={1000}
+            className={
+              "absolute w-[100%] h-[100%] max-w-[100%] max-h-[100%] object-contain z-30 outline-[0.5em] inset-[rgba(70,70,70,0.1)] outline-offset-[-0.5em] border-[0.1em solid rgba(20,20,20,0.7)]" +
+              " " +
+              (position === "left"
+                ? "rounded-[0.2em 0 0 0.2em]"
+                : "rounded-[0 0.2em 0.2em 0]")
+            }
+          />
+        </div>
       )}
       {navLinks && (
         <div
           ref={containerRef}
-          style={{
-            position: "absolute",
-            maxHeight: `${maxHeight}`,
-            height: "100%",
-            maxWidth: "50%",
-            width: "50%",
-            display: "flex",
-            flexDirection: isHorizontal ? "row" : "column",
-            flexWrap: "wrap",
-            alignItems: "center",
-            justifyContent: "center",
-          }}
+          className={
+            "absolute h-[100%] max-w-[50%] w-[50%] flex wrap items-center justify-center" +
+            `${maxHeight}` +
+            " " +
+            (isHorizontal ? "flex-row" : "flex-col")
+          }
         >
           {navLinks.map((navLink, index) => (
             <NavLink
@@ -120,46 +109,19 @@ const Details: React.FC<DetailsProps> = ({
         </div>
       )}
       <div
-        style={{
-          position: "absolute",
-          height: "100%",
-          width: "100%",
-          backgroundColor: "transparent",
-          display: "flex",
-          flexDirection: "row",
-          justifyContent: position === "left" ? "end" : "start",
-          alignItems: "center",
-        }}
+      className={"absolute h-[100%] w-[100%] bg-[transparent] flex flex-row items-center border-[none]" + " " + (position === "left" ? "justify-left" : "justify-right")}
       >
         <Card
-          size="medium"
-          style={{
-            position: "absolute",
-            height: "95%",
-            width: "50%",
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "start",
-            justifyContent: "center",
-            padding: "2em",
-            backgroundColor: "rgba(30, 30, 30, 0.75)",
-            color: "whitesmoke",
-            borderRadius: "2em",
-            left: position === "left" ? "50%" : "auto",
-            right: position === "right" ? "50%" : "auto",
-          }}
+          className={
+            "absolute mx-2 max-h-[65%] max-w-[50%] flex flex-col items-start justify-center p-[2em] bg-[rgba(30,30,30,0.75)] text-white rounded-2xl z-40" +
+            " " +
+            (position === "left" ? "left-1/2" : "right-1/2")
+          }
         >
-          <CardPreview
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              maxHeight: "100%",
-              gap: "1em",
-            }}
-          >
-            <Text size={700}>{header || "Header"}</Text>
-            <Text size={400}>{previewText || "This is Preview text."}</Text>
-          </CardPreview>
+          <CardHeader style={{ marginBottom: "1em" }}>
+            {header || "Header"}
+          </CardHeader>
+          <CardBody>{previewText || "This is Preview text."}</CardBody>
         </Card>
       </div>
     </div>
