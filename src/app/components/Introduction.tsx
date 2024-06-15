@@ -1,73 +1,34 @@
 "use client";
 import React from "react";
-import { Text, Card, CardPreview, Image } from "@fluentui/react-components";
-import images from "data/Images";
-const { coppermine_2 } = images;
+import { Card, CardHeader, CardBody } from "@nextui-org/react";
+import Image from "next/image";
 
 interface IntroductionProps {
-  header: string;
-  previewText: string;
+  headerText: string;
+  bodyText: string;
   imageUrl: string;
 }
 
 const Introduction: React.FC<IntroductionProps> = ({
-  header,
-  previewText,
+  headerText,
+  bodyText,
   imageUrl,
 }) => {
   return (
-    <div
-      style={{
-        position: "relative",
-        height: "100%",
-        width: "100%",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-      }}
-    >
+    <div className="Introduction relative w-full h-full flex flex-row justify-center items-center">
       <Image
-        src={imageUrl || coppermine_2}
-        loading="lazy"
-        fit="cover"
-        style={{
-          position: "absolute",
-          zIndex: 1,
-          display: "flex",
-          width: "100%",
-          height: "100%",
-          outline: "0.5em inset rgba(70, 70, 70, 0.1)",
-          outlineOffset: "-0.5em",
-        }}
+        alt="Introduction"
+        src={imageUrl || "coppermine_2.jpeg"}
+        fill
+        className="absolute w-full h-full z-1 outline-0.5em inset-rgba(70, 70, 70, 0.1) outline-offset--0.5em"
       />
-      <Card
-        size="medium"
-        style={{
-          zIndex: 2,
-          position: "relative",
-          maxHeight: "95%",
-          maxWidth: "95%",
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "start",
-          justifyContent: "center",
-          padding: "2em",
-          backgroundColor: "rgba(30, 30, 30, 0.8)",
-          color: "whitesmoke",
-          borderRadius: "2em",
-        }}
-      >
-        <CardPreview
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            maxHeight: "95%",
-            gap: "1em",
-          }}
-        >
-          <Text size={700}>{header || "Header"}</Text>
-          <Text size={400}>{previewText || "This is Preview text."}</Text>
-        </CardPreview>
+      <Card className="z-2 relative max-w-[90%] max-h-[90%] flex flex-col items-start justify-center p-4 bg-[rgba(30,30,30,0.8)] text-white rounded-3xl">
+        <CardHeader className="max-w-[98%] text-left text-xl font-light underline underline-offset-8">
+          {headerText || "Header"}
+        </CardHeader>
+        <CardBody className="max-h-[90%] max-w-[95%] ml-2 text-justify">
+          {bodyText || "This is Preview text."}
+        </CardBody>
       </Card>
     </div>
   );
