@@ -3,14 +3,13 @@ import React, { forwardRef } from "react";
 import Image from "next/image";
 import FooterLogo from "components/FooterLogo";
 import FooterNav from "components/FooterNav";
+import FooterSignature from "components/FooterSignature";
 
 interface FooterProps {
   imageUrl?: string;
 }
 
 const Footer = forwardRef<HTMLDivElement, FooterProps>(({ imageUrl }, ref) => {
-  const currentYear = new Date().getFullYear();
-
   return (
     <footer
       ref={ref}
@@ -23,20 +22,12 @@ const Footer = forwardRef<HTMLDivElement, FooterProps>(({ imageUrl }, ref) => {
         objectFit="cover"
         className="absolute top-0 left-0 w-full h-full z-[-1]"
       />
-      <div
-      className="h-[50%] max-w-[50%] bg-gray-300 flex justify-center items-center ml-[2%]"
-      >
+      <div className="relative aspect-square flex min-h-[50%] max-h-[50%] max-w-[50%] bg-gray-300 ml-[1.5em]">
         <FooterLogo />
       </div>
-      <div
-      className="h-[90%] w-[35%] max-w-[50%] flex flex-col items-end justify-around mr-[2%] mb-[2%]"
-      >
+      <div className="relative h-[90%] w-[40%] max-w-[50%] flex flex-col items-end justify-around mr-[1em]">
         <FooterNav />
-        <div
-          className="text-white text-lg font-bold text-center mt-[5%] bg-[rgba(50,50,50,0.45)] rounded-[10px] px-[3%]"
-        >
-          © {currentYear} Amanda Roy
-        </div>
+        <FooterSignature />
       </div>
     </footer>
   );

@@ -5,7 +5,6 @@ import Hero from "components/Hero";
 import Introduction from "components/Introduction";
 import NavContainer from "components/NavContainer";
 import Footer from "components/Footer";
-
 import { projectIcons } from "data/ProjectsPage";
 import images from "data/Images";
 const { gorge_2, field } = images;
