@@ -18,7 +18,7 @@ const AboutPage: React.FC = () => {
   return (
     <div className="AboutPage" style={{ width: "100vw", height: "100vh" }}>
       <LogoNav footerRef={footerRef} currentPage="about" />
-      <Hero text="Who Knit You?" imageUrl={fire} />
+      <Hero header="Who Knit You?" imageUrl={"fire.jpeg"} />
       <Divider outline={true} />
       <Details
         header="About Me"

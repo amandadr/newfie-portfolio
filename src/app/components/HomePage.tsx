@@ -18,7 +18,7 @@ const HomePage: React.FC = () => {
     <div className="HomePage" style={{ width: "100vw", height: "100vh" }}>
       <Images images={images} />
       <LogoNav footerRef={footerRef} currentPage="home" />
-      <Hero imageUrl={coppermine_2} text="Whaddya hat, bh'y?" />
+      <Hero imageUrl={"coppermine_2.jpeg"} header="Whaddya hat, bh'y?" />
       <Introduction
         header="Hi, I'm Amanda Roy"
         previewText="Welcome to my portfolio, where I hope you'll learn lots about my journey :)"

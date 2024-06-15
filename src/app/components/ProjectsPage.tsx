@@ -6,8 +6,6 @@ import Introduction from "components/Introduction";
 import NavContainer from "components/NavContainer";
 import Footer from "components/Footer";
 import { projectIcons } from "data/ProjectsPage";
-import images from "data/Images";
-const { gorge_2, field } = images;
 
 const ProjectsPage: React.FC = () => {
   const footerRef = useRef<HTMLDivElement>(null);
@@ -18,7 +16,7 @@ const ProjectsPage: React.FC = () => {
       style={{ width: "100vw", height: "100vh" }}
     >
       <LogoNav footerRef={footerRef} currentPage="projects" />
-      <Hero text="Projects" imageUrl={gorge_2} />
+      <Hero header="Projects" imageUrl={"gorge_2.jpeg"} />
       <Introduction
         header="These are my personal projects :)"
         previewText="I'll tell you more about how to take it all in right here..."

@@ -1,67 +1,32 @@
 "use client";
 import React from "react";
-import { Image, Text } from "@fluentui/react-components";
-import images from "data/Images";
-const { coppermine_1 } = images;
+import Image from "next/image";
 
 interface HeroProps {
   imageUrl?: string;
-  text?: string;
+  header?: string;
 }
 
 const Hero: React.FC<HeroProps> = (props) => {
-  const { imageUrl, text } = props;
+  const { imageUrl, header } = props;
   return (
     <div
-      className="Hero"
-      style={{
-        position: "relative",
-        height: "100%",
-        width: "100%",
-        margin: 0,
-        padding: 0,
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-      }}
+      className="Hero relative w-[100vw] h-[100vh] flex items-center justify-center"
     >
       <Image
-        fit="cover"
-        loading="lazy"
-        src={imageUrl || coppermine_1}
-        style={{
-          boxSizing: "border-box",
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          width: "100%",
-          height: "100%",
-          outline: "0.5em inset rgba(70, 70, 70, 0.1)",
-          outlineOffset: "-0.5em",
-        }}
+        alt="Hero"
+        src={imageUrl || "coppermine_1.jpeg"}
+        fill
+        className="flex items-center justify-center w-full h-full z-1 outline-[0.5em] inset-[rgba(70, 70, 70, 0.1)] outline-offset-[-0.5em]"
       />
       <div
-        style={{
-          position: "absolute",
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          width: "100%",
-          height: "100%",
-        }}
+      className="absolute flex items-center justify-center w-full h-full z-2"
       >
-        <Text
-          size={700}
-          as="h1"
-          align="center"
-          weight="bold"
-          style={{
-            color: "white",
-            textShadow: "5px 2px 8px #3D3D3D, -5px -2px 8px #3D3D3D",
-          }}
+        <h1
+          className="text-3xl text-center text-white font-medium shadow-lg bg-black bg-opacity-15 p-2 px-3 rounded-2xl"
         >
-          {text || "Welcome to my portfolio!"}
-        </Text>
+          {header || "Welcome to my portfolio!"}
+        </h1>
       </div>
     </div>
   );
