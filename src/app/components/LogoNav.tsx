@@ -5,8 +5,8 @@ import {
   DropdownMenu,
   DropdownItem,
   Button,
-  Image,
 } from "@nextui-org/react";
+import Image from "next/image";
 
 const menuItems = [
   { key: "home", label: "Home", href: "/" },
@@ -75,20 +75,11 @@ const LogoNav: React.FC<LogoNavProps> = ({ footerRef, currentPage }) => {
 
   return (
     <div
+      className={
+        "LogoNav fixed z-[25] ml-6 mt-6 aspect-square min-h-5 max-h-15 h-16 flex-col justify-start items-start transition-opacity duration-500 ease-in-out" +
+        (isFooterVisible ? " hidden" : " flex")
+      }
       style={{
-        position: "fixed",
-        zIndex: 25,
-        marginLeft: "1.5em",
-        marginTop: "1.5em",
-        aspectRatio: "1/1",
-        minHeight: "5%",
-        maxHeight: "15%",
-        height: "4em",
-        display: isFooterVisible ? "none" : "flex",
-        flexDirection: "column",
-        justifyContent: "start",
-        alignItems: "start",
-        transition: "opacity 0.5s ease",
         opacity: isScrolled ? Math.max(0.5, 1 - scrollDepth) : 1,
       }}
     >
@@ -100,15 +91,16 @@ const LogoNav: React.FC<LogoNavProps> = ({ footerRef, currentPage }) => {
             className="flex h-[100%] w-[100%]"
           >
             <Image
-              src="/favicon.ico"
+              src={"logo.png"}
               alt="LogoNav"
-              className="flex h-[100%] w-[100%]"
+              fill
+              className="flex h-[100%] w-[100%] object-contain"
             />
           </Button>
         </DropdownTrigger>
         <DropdownMenu aria-label="Static Actions">
           {filteredMenuItems.map((item) => (
-            <DropdownItem key={item.key} href={item.href} color="success">
+            <DropdownItem key={item.key} href={item.href}>
               {item.label}
             </DropdownItem>
           ))}
