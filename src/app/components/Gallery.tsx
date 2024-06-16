@@ -15,13 +15,13 @@ const Gallery: React.FC<GalleryProps> = ({ images }) => {
   const galleryItems = images.map((src) => ({
     original: `https://newfie-portfolio-images.imgix.net/${src}/`,
     thumbnail: `https://newfie-portfolio-images.imgix.net/${src}/`,
-    sizes: "40vh",
+    sizes: "90vw",
   }));
 
   return (
     <div onClick={(e) => e.stopPropagation()} style={{ zIndex: 100 }}>
       <ImageGallery
-        showFullscreenButton={false}
+        showFullscreenButton={true}
         items={galleryItems.slice(1)}
         additionalClass="Gallery"
         showPlayButton={false}
