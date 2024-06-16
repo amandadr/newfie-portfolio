@@ -78,7 +78,7 @@ const Details: React.FC<DetailsProps> = ({
             width={500}
             height={1000}
             className={
-              "absolute w-[100%] h-[100%] max-w-[100%] max-h-[100%] object-contain z-30 outline-[0.5em] inset-[rgba(70,70,70,0.1)] outline-offset-[-0.5em] border-[0.1em solid rgba(20,20,20,0.7)]" +
+              "absolute w-[100%] h-[100%] max-w-[100%] max-h-[100%] object-contain z-15 outline-[0.5em] inset-[rgba(70,70,70,0.1)] outline-offset-[-0.5em] border-[0.1em solid rgba(20,20,20,0.7)]" +
               " " +
               (position === "left"
                 ? "rounded-[0.2em 0 0 0.2em]"
