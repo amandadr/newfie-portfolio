@@ -97,14 +97,12 @@ const Details: React.FC<DetailsProps> = ({
           }
         >
           {navItems.map((item, index) => (
-            <NavItem
-              key={index}
-              {...item}
-            />
+            <NavItem key={index} {...item} />
           ))}
         </div>
       )}
       <div
+        // Use this div to control Card component justify based on position parameter
         className={
           "absolute h-[100%] w-[100%] bg-[transparent] flex flex-row items-center border-[none]" +
           " " +
@@ -113,15 +111,17 @@ const Details: React.FC<DetailsProps> = ({
       >
         <Card
           className={
-            "absolute mx-2 max-h-[65%] max-w-[50%] flex flex-col items-start justify-center p-[2em] bg-[rgba(30,30,30,0.75)] text-white rounded-2xl z-40" +
+            "absolute z-20 gap-4 mx-2 max-h-[65%] max-w-[50%] flex flex-col items-start justify-center p-8 bg-[rgba(30,30,30,0.75)] text-white rounded-2xl sm:p-0 sm:gap-0" +
             " " +
             (position === "left" ? "left-1/2" : "right-1/2")
           }
         >
-          <CardHeader style={{ marginBottom: "1em" }}>
+          <CardHeader className="relative sm:mb-[-1em]">
             {header || "Header"}
           </CardHeader>
-          <CardBody>{previewText || "This is Preview text."}</CardBody>
+          <CardBody className="relative sm:text-xs sm:min-w-full">
+            {previewText || "This is Preview text."}
+          </CardBody>
         </Card>
       </div>
     </div>
