@@ -74,9 +74,8 @@ const Details: React.FC<DetailsProps> = ({
           <Image
             alt="me_1.jpeg"
             src={highlightImage || "me_1.jpeg"}
-            layout="responsive"
-            width={500}
-            height={1000}
+            fill
+            sizes="50vw"
             className={
               "absolute w-[100%] h-[100%] max-w-[100%] max-h-[100%] object-contain z-15 outline-[0.5em] inset-[rgba(70,70,70,0.1)] outline-offset-[-0.5em] border-[0.1em solid rgba(20,20,20,0.7)]" +
               " " +

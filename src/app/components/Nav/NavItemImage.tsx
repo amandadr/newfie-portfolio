@@ -3,19 +3,20 @@
 import React from "react";
 import Image from "next/image";
 
-type NavImageProps = {
+type NavItemImageProps = {
   imageUrl: string;
   label: string;
 };
 
-const NavImage: React.FC<NavImageProps> = ({ imageUrl, label }) => {
+const NavItemImage: React.FC<NavItemImageProps> = ({ imageUrl, label }) => {
   return (
     <>
       <Image
         alt={imageUrl}
         src={imageUrl}
         fill
-        className="w-full object-cover aspect-square z-1 outline-[0.3em] outline-offset-[-0.3em]"
+        sizes="100%"
+        className="relative w-full object-cover aspect-square z-1 outline-[0.3em] outline-offset-[-0.3em]"
       />
       <div
         className="absolute z-2 text-wrap text-white text-shadow text-xl font-semibold text-center bg-[rgba(100,100,100,0.35)] rounded-xl px-2"
@@ -29,4 +30,4 @@ const NavImage: React.FC<NavImageProps> = ({ imageUrl, label }) => {
   );
 };
 
-export default NavImage;
+export default NavItemImage;

@@ -88,13 +88,15 @@ const LogoNav: React.FC<LogoNavProps> = ({ footerRef, currentPage }) => {
           <Button
             isIconOnly
             aria-label="Menu"
-            className="flex h-[100%] w-[100%]"
+            className="relative flex h-[100%] w-[100%]"
           >
             <Image
-              src={"logo.png"}
+              src="logo.png"
               alt="LogoNav"
               fill
-              className="flex h-[100%] w-[100%] object-contain"
+              priority
+              sizes="100%"
+              className="relative flex h-[100%] w-[100%] object-contain"
             />
           </Button>
         </DropdownTrigger>

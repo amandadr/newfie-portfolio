@@ -26,7 +26,8 @@ const FooterLink: React.FC<FooterLinkProps> = ({
         alt={imgAlt}
         src={imgHref}
         fill
-        className="relative min-h-full min-w-full"
+        sizes="100%"
+        className="relative object-contain min-h-full min-w-full"
       />
     </Link>
   );

@@ -3,7 +3,7 @@
 import React from "react";
 import { Button } from "@nextui-org/react";
 import Link from "next/link";
-import NavImage from "components/Nav/NavImage";
+import NavItemImage from "components/Nav/NavItemImage";
 
 interface Details {
   date: string;
@@ -42,7 +42,7 @@ const NavItem: React.FC<NavItemProps> = ({
           target={target}
           className="relative z-10 flex justify-center items-center h-full w-full rounded-none"
         >
-          <NavImage imageUrl={imageUrl} label={label} />
+          <NavItemImage imageUrl={imageUrl} label={label} />
         </Link>
       ) : (
         // if not Link, must be Modal
@@ -50,7 +50,7 @@ const NavItem: React.FC<NavItemProps> = ({
           onClick={onClick!}
           className="relative flex justify-center items-center h-full w-full rounded-none"
         >
-          <NavImage imageUrl={imageUrl} label={label} />
+          <NavItemImage imageUrl={imageUrl} label={label} />
         </Button>
       )}
     </div>

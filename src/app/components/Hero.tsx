@@ -17,7 +17,8 @@ const Hero: React.FC<HeroProps> = (props) => {
         alt="Hero"
         src={imageUrl || "coppermine_1.jpeg"}
         fill
-        className="flex items-center justify-center w-full h-full z-1 outline-[0.5em] inset-[rgba(70, 70, 70, 0.1)] outline-offset-[-0.5em]"
+        sizes="100vw 100vh"
+        className="relative object-cover flex items-center justify-center w-full h-full z-1 outline-[0.5em] inset-[rgba(70, 70, 70, 0.1)] outline-offset-[-0.5em]"
       />
       <div
       className="absolute flex items-center justify-center w-full h-full z-2"

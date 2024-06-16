@@ -18,9 +18,9 @@ const Footer = forwardRef<HTMLDivElement, FooterProps>(({ imageUrl }, ref) => {
       <Image
         alt="Background"
         src={imageUrl || "green_gardens.jpeg"}
-        layout="fill"
-        objectFit="cover"
-        className="absolute top-0 left-0 w-full h-full z-[-1]"
+        fill
+        sizes="100vw"
+        className="absolute object-cover top-0 left-0 w-full h-full z-[-1]"
       />
       <div className="relative aspect-square flex min-h-[50%] max-h-[50%] max-w-[50%] bg-gray-300 ml-[1.5em]">
         <FooterLogo />
