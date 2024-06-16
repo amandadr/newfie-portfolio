@@ -35,20 +35,20 @@ const NavItem: React.FC<NavItemProps> = ({
   const isLink = !!url;
 
   return (
-    <div className="relative flex flex-auto min-w-[33.33%] max-w-[50%] max-h-[50vh] aspect-square">
+    <div className="relative flex flex-auto min-w-[33.33%] max-w-[50%] max-h-[50%] aspect-square">
       {isLink ? (
         <Link
           href={url!}
           target={target}
-          className="relative z-10 flex justify-center items-center h-full w-full rounded-none"
+          className="absolute z-10 flex justify-center items-center h-full w-full rounded-none"
         >
           <NavItemImage imageUrl={imageUrl} label={label} />
         </Link>
       ) : (
-        // if not Link, must be Modal
+        // if not Link, must be Modal button
         <Button
           onClick={onClick!}
-          className="relative flex justify-center items-center h-full w-full rounded-none"
+          className="absolute z-10 flex justify-center items-center h-full w-full rounded-none"
         >
           <NavItemImage imageUrl={imageUrl} label={label} />
         </Button>

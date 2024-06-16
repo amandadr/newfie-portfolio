@@ -90,7 +90,7 @@ const Details: React.FC<DetailsProps> = ({
         <div
           ref={containerRef}
           className={
-            "absolute h-[100%] max-w-[50%] w-[50%] flex wrap items-center justify-center" +
+            "absolute min-h-[100%] max-w-[50%] w-[50%] flex wrap items-center justify-center" +
             `${maxHeight}` +
             " " +
             (isHorizontal ? "flex-row" : "flex-col")
