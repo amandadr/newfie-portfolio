@@ -20,6 +20,7 @@ const Introduction: React.FC<IntroductionProps> = ({
         alt="Introduction"
         src={imageUrl || "coppermine_2.jpeg"}
         fill
+        priority
         sizes="100vw 100vh"
         className="absolute object-cover w-full h-full z-1 outline-0.5em inset-rgba(70, 70, 70, 0.1) outline-offset--0.5em"
       />

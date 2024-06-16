@@ -10,7 +10,6 @@ const FooterLogo: React.FC = () => {
         alt="Logo"
         src="logo.png"
         fill
-        priority
         sizes="100%"
         className="relative object-contain h-full aspect-square shadow-2xl"
         />
