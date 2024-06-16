@@ -1,12 +1,5 @@
 "use client";
 import React from "react";
-// import {
-//   Card,
-//   CardPreview,
-//   CardFooter,
-//   Text,
-//   Link,
-// } from "@fluentui/react-components";
 import {
   Card,
   CardHeader,
@@ -21,13 +14,13 @@ import Gallery from "./Gallery";
 type ModalProps = {
   isOpen: boolean;
   onClose: () => void;
-  date?: string; // Make these optional since not all items will have them
+  date?: string;
   header?: string;
   content?: string;
   modalUrl?: string;
-  images?: string[]; // Use an optional array for images
+  images?: string[];
   liveUrl?: string;
-  githubUrl?: string; // Make GitHub URL optional as well
+  githubUrl?: string;
   techStack?: { class: string; name: string }[];
 };
 
@@ -49,16 +42,18 @@ const Modal: React.FC<ModalProps> = ({
       onClick={onClose}
     >
       <Image
-        alt="Modal"
+        alt="flower_1.jpeg"
         src={modalUrl || "flower_1.jpeg"}
         fill
-        className="absolute object-cover w-full h-full z-1 filter-[blur(3px) opacity(0.75)] cursor-pointer"
+        sizes="100vw"
+        className="absolute object-cover w-full h-full z-1 cursor-pointer"
+        style={{ filter: "blur(3px) opacity(0.75)"}}
       />
       <Card
         className="z-2 px-8 py-6 bg-white rounded-lg cursor-default"
         onClick={(e) => e.stopPropagation()}
       >
-        <CardBody className="flex flex-row justify-between items-center gap-2">
+        <CardHeader className="flex flex-row justify-between items-center gap-2">
           <div className="font-medium">{date}</div>
           <div className="w-80 flex flex-row justify-end gap-6">
             <Link
@@ -82,7 +77,7 @@ const Modal: React.FC<ModalProps> = ({
               </Link>
             )}
           </div>
-        </CardBody>
+        </CardHeader>
         <CardBody>
           <div className="text-lg font-bold">{header}</div>
           <div>{content}</div>
@@ -99,7 +94,7 @@ const Modal: React.FC<ModalProps> = ({
           ))}
         </CardFooter>
       </Card>
-      <Gallery images={images} />
+      {images && (images[1] && <Gallery images={images} />)}
       <BouncingDots onClose={onClose} />
     </div>
   );
