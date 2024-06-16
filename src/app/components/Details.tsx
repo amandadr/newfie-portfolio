@@ -56,11 +56,11 @@ const Details: React.FC<DetailsProps> = ({
       }
     >
       <Image
-        alt=","
+        alt="coppermine_2.jpeg"
         src={bgImage || "coppermine_2.jpeg"}
-        layout="fill"
-        objectFit="cover"
-        className="relative filter brightness-[0.85] z-1 w-[100vw] h-[60vh] outline-[0.5em] inset-[rgba(70,70,70,0.1)] outline-offset-[-0.5em]"
+        fill
+        sizes="100vw"
+        className="relative object-cover filter brightness-[0.85] z-1 w-[100vw] h-[60vh] outline-[0.5em] inset-[rgba(70,70,70,0.1)] outline-offset-[-0.5em]"
       />
       {highlightImage && (
         <div
@@ -72,7 +72,7 @@ const Details: React.FC<DetailsProps> = ({
           }
         >
           <Image
-            alt=","
+            alt="me_1.jpeg"
             src={highlightImage || "me_1.jpeg"}
             layout="responsive"
             width={500}
