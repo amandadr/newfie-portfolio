@@ -24,6 +24,7 @@ const Skills: React.FC<SkillsProps> = ({ skills, imageUrl }) => {
         alt="Skills"
         src={imageUrl}
         fill
+        sizes="100vw"
         className="absolute object-cover w-full aspect-square z-1 filter-[brightness(0.85)] outline-[0.5em] inset-[rgba(70,70,70,0.1)] outline-offset-[-0.5em]"
       />
       <div
@@ -34,8 +35,8 @@ const Skills: React.FC<SkillsProps> = ({ skills, imageUrl }) => {
       <div
       className="z-2 relative flex flex-wrap justify-center items-center max-h-[95%] p-[2em] gap-[1em]"
       >
-        {skills.map((skill, i) => (
-          <SkillIcon skillKey={i} skill={skill} />
+        {skills.map((skill) => (
+          <SkillIcon key={skill.name} skill={skill} />
         ))}
       </div>
     </section>
