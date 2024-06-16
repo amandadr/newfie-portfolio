@@ -89,6 +89,7 @@ const LogoNav: React.FC<LogoNavProps> = ({ footerRef, currentPage }) => {
             isIconOnly
             aria-label="Menu"
             className="relative flex h-[100%] w-[100%]"
+            as={"a"}
           >
             <Image
               src="logo.png"
