@@ -4,15 +4,7 @@ import Details from "components/Details";
 const NotFoundPage: React.FC = () => {
   return (
     <div
-      className="NotFoundPage"
-      style={{
-        backgroundColor: "rgba(0, 0, 0, 0.92)",
-        width: "100%",
-        height: "100vh",
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-      }}
+      className="NotFoundPage bg-[rgba(0, 0, 0, 0.92)] w-[100%] h-[100vh] flex justify-center items-center"
     >
       <Details
         header="404 Not Found - Dassit Bh'y"

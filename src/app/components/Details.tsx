@@ -59,6 +59,7 @@ const Details: React.FC<DetailsProps> = ({
         alt="coppermine_2.jpeg"
         src={bgImage || "coppermine_2.jpeg"}
         fill
+        priority
         sizes="100vw"
         className="relative object-cover filter brightness-[0.85] z-1 w-[100vw] h-[60vh] outline-[0.5em] inset-[rgba(70,70,70,0.1)] outline-offset-[-0.5em]"
       />
@@ -90,8 +91,7 @@ const Details: React.FC<DetailsProps> = ({
         <div
           ref={containerRef}
           className={
-            "absolute min-h-[100%] max-w-[50%] w-[50%] flex wrap items-center justify-center" +
-            `${maxHeight}` +
+            "relative min-h-[100%] max-w-[50%] w-[50%] flex wrap items-center justify-center" +
             " " +
             (isHorizontal ? "flex-row" : "flex-col")
           }
