@@ -4,7 +4,7 @@ export const projectDetails = [
     startDate: "2024",
     description:
       "This is the site you're on right now! I built this site to showcase my skills and projects, and to practice my design and development skills. I used React and Vite to build the site, and Fluent UI for the components. I also used CSS for styling and Figma to design the layout.",
-    images: [],
+    images: ["gorge_1.jpeg"],
     liveUrl: "https://amandadroy.com/",
     githubUrl: "https://github.com/amandadr/newfie-portfolio",
     technologies: [
