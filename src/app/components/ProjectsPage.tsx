@@ -22,7 +22,7 @@ const ProjectsPage: React.FC = () => {
         bodyText="I'll tell you more about how to take it all in right here..."
         imageUrl=""
       />
-      <NavContainer navIcons={projectIcons} />
+      <NavContainer navItems={projectIcons} />
       <Footer ref={footerRef} imageUrl={"field.jpeg"} />
     </section>
   );

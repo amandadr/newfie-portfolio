@@ -1,15 +1,14 @@
 "use client";
 import React, { useState } from "react";
-import { Text } from "@fluentui/react-components";
-import NavIcon from "components/NavIcon";
-import NavLink from "components/NavLink";
+import NavItem from "components/NavItem";
 import Modal from "components/Modal";
 
 interface NavContainerProps {
-  navIcons?: {
+  navItems: {
     imageUrl: string;
     label: string;
-    details: {
+    // Make details optional, as it's only needed for icons with modals
+    details?: {
       date: string;
       header: string;
       content: string;
@@ -19,114 +18,45 @@ interface NavContainerProps {
       githubUrl?: string;
       techStack?: { class: string; name: string }[];
     };
-  }[];
-  navLinks?: {
-    imageUrl: string;
-    label: string;
+    url?: string;
     target?: string;
-    url: string;
   }[];
   title?: string;
 }
 
-const NavContainer: React.FC<NavContainerProps> = (props) => {
-  const { navIcons, navLinks, title } = props;
+const NavContainer: React.FC<NavContainerProps> = ({ navItems, title }) => {
   const [selectedNavIcon, setSelectedNavIcon] = useState<string | null>(null);
 
-  const handleNavIconClick = (label: string) => {
-    setSelectedNavIcon(label);
+  const handleNavItemClick = (item: NavContainerProps["navItems"][number]) => {
+    if (item.details) {
+      // Check if the item has details (i.e., is an icon with a modal)
+      setSelectedNavIcon(item.label);
+    }
   };
 
-  const selectedIconDetails = navIcons?.find(
-    (icon) => icon.label === selectedNavIcon
-  )?.details;
-
   return (
-    <div
-      className="NavContainer"
-      id="NavContainer"
-      style={{
-        maxWidth: "100vw",
-        backgroundColor: "rgba(0, 0, 0, 0.5)",
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        justifyContent: "space-between",
-      }}
-    >
+    <div className="NavContainer max-w-full bg-black/50 flex flex-col items-center justify-between">
+      {/* Title (add Tailwind classes for styling) */}
       {title && (
-        <Text
-          as="h2"
-          weight="semibold"
-          style={{
-            zIndex: 3,
-            position: "absolute",
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            height: "1em",
-            maxHeight: "1em",
-            width: "fit-content",
-            paddingInline: "0.3em",
-            paddingBottom: "0.1em",
-            marginTop: "-1.1em",
-            fontSize: "2.5em",
-            color: "white",
-            textShadow: "5px 2px 8px #232, -5px -2px 8px #232",
-            backgroundColor: "rgba(100, 100, 100, 0.5)",
-            borderRadius: "1em",
-            boxShadow: "1px 1px 1px 2px rgba(40, 40, 40, 0.91)",
-          }}
-        >
+        <h2 className="z-3 absolute flex items-center justify-center h-1em w-fit p-3 -mt-11 text-2.5xl font-semibold text-white text-shadow-text-outline bg-black/50 rounded-xl shadow-md">
           {title}
-        </Text>
+        </h2>
       )}
       {selectedNavIcon ? (
         <Modal
           isOpen={selectedNavIcon !== null}
           onClose={() => setSelectedNavIcon(null)}
-          date={selectedIconDetails?.date || "Date"}
-          header={selectedIconDetails?.header || "Header"}
-          content={selectedIconDetails?.content || "Content"}
-          imageUrl={selectedIconDetails?.modalUrl || "/images/flower_1.jpeg"}
-          galleryImages={selectedIconDetails?.images || []}
-          liveUrl={selectedIconDetails?.liveUrl || ""}
-          githubUrl={selectedIconDetails?.githubUrl || ""}
-          techStack={selectedIconDetails?.techStack || []}
+          {...navItems.find((item) => item.label === selectedNavIcon)?.details}
         />
       ) : (
-        <div
-          style={{
-            position: "relative",
-            maxHeight: "100%",
-            width: "100%",
-            maxWidth: "100vw",
-            display: "flex",
-            flexFlow: "row wrap",
-            justifyContent: "space-around",
-            backgroundColor: "rgba(0, 0, 0, 0.5)",
-          }}
-        >
-          {navLinks &&
-            navLinks.map((navLink, index) => (
-              <NavLink
-                key={index}
-                label={navLink.label}
-                target={navLink.target}
-                url={navLink.url}
-                imageUrl={navLink.imageUrl}
-              />
-            ))}
-          {navIcons &&
-            navIcons.map((navIcon, index) => (
-              <NavIcon
-                key={index}
-                label={navIcon.label}
-                hook={() => handleNavIconClick(navIcon.label)}
-                imageUrl={navIcon.imageUrl}
-                details={navIcon.details}
-              />
-            ))}
+        <div className="relative min-h-[33.33vh] max-h-full w-full flex flex-row flex-wrap justify-around bg-black/50">
+          {navItems.map((item, index) => (
+            <NavItem
+              key={index}
+              {...item}
+              onClick={() => handleNavItemClick(item)}
+            />
+          ))}
         </div>
       )}
     </div>

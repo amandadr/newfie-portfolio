@@ -4,13 +4,17 @@ import ImageGallery from "react-image-gallery";
 import "react-image-gallery/styles/css/image-gallery.css";
 
 interface GalleryProps {
-  images: Array<string>;
+  images?: Array<string>;
 }
 
 const Gallery: React.FC<GalleryProps> = ({ images }) => {
-  const galleryItems = images.map((image) => ({
-    original: image,
-    thumbnail: image,
+  if (!images) {
+    return null;
+  }
+
+  const galleryItems = images.map((src) => ({
+    original: `https://newfie-portfolio-images.imgix.net/${src}/`,
+    thumbnail: `https://newfie-portfolio-images.imgix.net/${src}/`,
     sizes: "40vh",
   }));
 

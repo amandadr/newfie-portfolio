@@ -20,7 +20,7 @@ const HomePage: React.FC = () => {
         bodyText="Welcome to my portfolio, where I hope you'll learn lots about my journey :)"
         imageUrl={"gorge_2.jpeg"}
       />
-      <NavContainer navLinks={homeLinks} />
+      <NavContainer navItems={homeLinks} />
       <Footer ref={footerRef} imageUrl={"sky_1.jpeg"} />
     </div>
   );

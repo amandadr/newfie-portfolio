@@ -1,26 +1,26 @@
 "use client";
 import React from "react";
 import {
-  Image,
   Card,
   CardPreview,
   CardFooter,
   Text,
   Link,
 } from "@fluentui/react-components";
+import Image from "next/image";
 import BouncingDots from "./BouncingDots";
 import Gallery from "./Gallery";
 
-interface ModalProps {
+type ModalProps = {
   isOpen: boolean;
   onClose: () => void;
-  date: string;
-  header: string;
-  content: string;
-  imageUrl?: string;
-  galleryImages: Array<string>;
+  date?: string; // Make these optional since not all items will have them
+  header?: string;
+  content?: string;
+  modalUrl?: string;
+  images?: string[]; // Use an optional array for images
   liveUrl?: string;
-  githubUrl: string;
+  githubUrl?: string; // Make GitHub URL optional as well
   techStack?: { class: string; name: string }[];
 }
 
@@ -30,33 +30,21 @@ const Modal: React.FC<ModalProps> = ({
   date,
   header,
   content,
-  imageUrl,
-  galleryImages,
+  modalUrl,
+  images,
   liveUrl,
   githubUrl,
   techStack,
 }) => {
   return (
     <div
-      style={{
-        position: "relative",
-        width: "100%",
-        maxWidth: "100vw",
-        backgroundColor: "rgba(0, 0, 0, 0.5)",
-        display: "flex",
-        flexDirection: "column",
-        justifyContent: "center",
-        alignItems: "center",
-        zIndex: 10,
-        paddingBlock: "5em",
-        gap: "1em",
-      }}
+    className="Modal relative w-full max-w-[100vw] flex flex-col justify-center items-center bg-[rgba(0,0,0,0.5)] z-10 p-20 gap-4"
       onClick={onClose}
     >
       <Image
-        fit="cover"
-        loading="lazy"
-        src={`${imageUrl}` || "/images/flower_1.jpeg"}
+        alt="Modal"
+        src={modalUrl || "flower_1.jpeg"}
+        fill
         style={{
           zIndex: 1,
           position: "absolute",
@@ -145,6 +133,7 @@ const Modal: React.FC<ModalProps> = ({
           {techStack?.map((tech) => (
             <div
               key={tech.name}
+              className="flex flex-wrap"
               style={{
                 display: "flex",
                 alignItems: "center",
@@ -158,7 +147,7 @@ const Modal: React.FC<ModalProps> = ({
           ))}
         </CardFooter>
       </Card>
-      <Gallery images={galleryImages} />
+      <Gallery images={images} />
       <BouncingDots onClose={onClose} />
     </div>
   );

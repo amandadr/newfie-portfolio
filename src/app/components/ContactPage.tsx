@@ -20,12 +20,12 @@ const ContactPage: React.FC = () => {
         previewText="If you'd like to connect with me, feel free to reach out through any of the following channels :D"
         bgImage=""
       />
-      <NavContainer navLinks={connectLinks} />
+      <NavContainer navItems={connectLinks} />
       <Details
         header="Looking good and need a solution?"
         previewText="I'm open to hear you out and talk about building something awesome together!"
         bgImage=""
-        navLinks={workLinks}
+        navItems={workLinks}
       />
       <Footer ref={footerRef} />
     </div>

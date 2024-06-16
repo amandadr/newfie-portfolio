@@ -2,12 +2,12 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Card, CardHeader, CardBody } from "@nextui-org/react";
 import Image from "next/image";
-import NavLink from "components/NavLink";
+import NavItem from "components/NavItem";
 
 interface DetailsProps {
   bgImage?: string;
   highlightImage?: string;
-  navLinks?: {
+  navItems?: {
     imageUrl: string;
     label: string;
     target?: string;
@@ -21,7 +21,7 @@ interface DetailsProps {
 const Details: React.FC<DetailsProps> = ({
   bgImage,
   highlightImage,
-  navLinks,
+  navItems,
   highlightPosition,
   header,
   previewText,
@@ -87,7 +87,7 @@ const Details: React.FC<DetailsProps> = ({
           />
         </div>
       )}
-      {navLinks && (
+      {navItems && (
         <div
           ref={containerRef}
           className={
@@ -97,19 +97,20 @@ const Details: React.FC<DetailsProps> = ({
             (isHorizontal ? "flex-row" : "flex-col")
           }
         >
-          {navLinks.map((navLink, index) => (
-            <NavLink
+          {navItems.map((item, index) => (
+            <NavItem
               key={index}
-              label={navLink.label}
-              target={navLink.target}
-              url={navLink.url}
-              imageUrl={navLink.imageUrl}
+              {...item}
             />
           ))}
         </div>
       )}
       <div
-      className={"absolute h-[100%] w-[100%] bg-[transparent] flex flex-row items-center border-[none]" + " " + (position === "left" ? "justify-left" : "justify-right")}
+        className={
+          "absolute h-[100%] w-[100%] bg-[transparent] flex flex-row items-center border-[none]" +
+          " " +
+          (position === "left" ? "justify-left" : "justify-right")
+        }
       >
         <Card
           className={
