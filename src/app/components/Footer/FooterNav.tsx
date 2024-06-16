@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import FooterLink from "./FooterLink";
+import FooterLink from "components/Footer/FooterLink";
 
 const FooterNav: React.FC = () => {
   return (

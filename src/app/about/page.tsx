@@ -1,12 +1,12 @@
 "use client";
 import React, { useRef } from "react";
-import LogoNav from "components/LogoNav";
+import LogoNav from "components/Nav/LogoNav";
 import Hero from "components/Hero";
 import Divider from "components/Divider";
 import Details from "components/Details";
-import NavContainer from "components/NavContainer";
+import NavContainer from "components/Nav/NavContainer";
 import Skills from "components/Skills";
-import Footer from "components/Footer";
+import Footer from "components/Footer/Footer";
 
 import { expIcons, skills } from "data/AboutPage";
 

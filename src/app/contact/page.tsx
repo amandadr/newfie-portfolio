@@ -1,10 +1,10 @@
 "use client";
 import React, { useRef } from "react";
-import LogoNav from "components/LogoNav";
+import LogoNav from "components/Nav/LogoNav";
 import Hero from "components/Hero";
 import Details from "components/Details";
-import NavContainer from "components/NavContainer";
-import Footer from "components/Footer";
+import NavContainer from "components/Nav/NavContainer";
+import Footer from "components/Footer/Footer";
 
 import { connectLinks, workLinks } from "data/ContactPage";
 

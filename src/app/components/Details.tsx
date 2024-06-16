@@ -2,7 +2,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Card, CardHeader, CardBody } from "@nextui-org/react";
 import Image from "next/image";
-import NavItem from "components/NavItem";
+import NavItem from "components/Nav/NavItem";
 
 interface DetailsProps {
   bgImage?: string;

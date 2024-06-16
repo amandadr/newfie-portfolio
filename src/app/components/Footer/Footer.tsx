@@ -1,9 +1,9 @@
 "use client";
 import React, { forwardRef } from "react";
 import Image from "next/image";
-import FooterLogo from "components/FooterLogo";
-import FooterNav from "components/FooterNav";
-import FooterSignature from "components/FooterSignature";
+import FooterLogo from "components/Footer/FooterLogo";
+import FooterNav from "components/Footer/FooterNav";
+import FooterSignature from "components/Footer/FooterSignature";
 
 interface FooterProps {
   imageUrl?: string;

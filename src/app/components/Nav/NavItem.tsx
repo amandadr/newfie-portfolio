@@ -3,7 +3,7 @@
 import React from "react";
 import { Button } from "@nextui-org/react";
 import Link from "next/link";
-import NavImage from "components/NavImage";
+import NavImage from "components/Nav/NavImage";
 
 interface Details {
   date: string;

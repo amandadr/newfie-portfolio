@@ -1,6 +1,5 @@
 "use client";
 import React from "react";
-import { Text } from "@fluentui/react-components";
 
 interface Skill {
   color: string;

@@ -8,8 +8,8 @@ import {
   Link,
 } from "@nextui-org/react";
 import Image from "next/image";
-import BouncingDots from "./BouncingDots";
-import Gallery from "./Gallery";
+import BouncingDots from "components/BouncingDots";
+import Gallery from "components/Gallery";
 
 type ModalProps = {
   isOpen: boolean;

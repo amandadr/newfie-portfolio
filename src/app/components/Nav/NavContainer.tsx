@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import NavItem from "components/NavItem";
+import NavItem from "components/Nav/NavItem";
 import Modal from "components/Modal";
 
 interface NavContainerProps {
