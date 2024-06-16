@@ -17,31 +17,17 @@ const SkillIcon: React.FC<SkillIconProps> = ({ skill, skillKey }) => {
   return (
     <div
       key={skillKey}
+      className="SkillIcon flex flex-col items-center justify-center text-[#ffffff] border-[0.2em] border-[rgba(175,175,175,0.3)] rounded-full w-[15vmin] h-[15vmin] min-w-[7em] min-h-[7em] shadow-[0px 4px 8px rgba(0,0,0,0.2)] text-center gap-[0.2em]"
       style={{
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        justifyContent: "center",
         backgroundColor: skill.color,
-        color: "white",
-        border: "0.2em solid rgba(175, 175, 175, 0.3)",
-        borderRadius: "50%",
-        width: "15vmin",
-        height: "15vmin",
-        minWidth: "7em",
-        minHeight: "7em",
-        boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)",
-        textAlign: "center",
-        gap: "0.2em",
       }}
     >
       <i
-        className={skill.class}
-        style={{ fontSize: "2em", marginTop: "0.15em" }}
+        className={skill.class + " mt-[0.15em] text-[2em]"}
       ></i>
-      <Text weight="semibold" style={{ fontSize: "0.8em" }}>
+      <div className="text-[0.8em] font-medium">
         {skill.name}
-      </Text>
+      </div>
     </div>
   );
 };

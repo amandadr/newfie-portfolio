@@ -1,35 +1,32 @@
-import images from "./Images";
-const { mac_search, da_tech, bootcamp, flower_1, flower_2, flower_4 } = images;
-
 export const expIcons = [
   {
-    imageUrl: mac_search,
+    imageUrl: "mac_search.jpeg",
     label: "MacMillan Search",
     details: {
       date: "April, 2024 - Present",
       header: "Junior SEO Specialist and Automation Developer",
       content: "An SEO company.",
-      modalUrl: flower_1,
+      modalUrl: "flower_1.jpeg",
     },
   },
   {
-    imageUrl: da_tech,
+    imageUrl: "da_tech.jpeg",
     label: "DataAnnotation Tech",
     details: {
       date: "January, 2024 - Present",
       header: "Machine Learning Research Developer",
       content: "An LLM data company.",
-      modalUrl: flower_2,
+      modalUrl: "flower_2.jpeg",
     },
   },
   {
-    imageUrl: bootcamp,
+    imageUrl: "bootcamp.jpeg",
     label: "Lighthouse Labs",
     details: {
       date: "September - December, 2023",
       header: "Full Stack Web Development Graduate",
       content: "A Canadian coding bootcamp.",
-      modalUrl: flower_4,
+      modalUrl: "flower_4.jpeg",
     },
   },
 ];

@@ -9,8 +9,6 @@ import Skills from "components/Skills";
 import Footer from "components/Footer";
 
 import { expIcons, skills } from "data/AboutPage";
-import images from "data/Images";
-const { fire, beach_2, me_1, gorge_1, flower_3 } = images;
 
 const AboutPage: React.FC = () => {
   const footerRef = useRef<HTMLDivElement>(null);
@@ -38,7 +36,7 @@ const AboutPage: React.FC = () => {
         highlightPosition="left"
       />
       <Divider outline={true} />
-      <Skills skills={skills.icons} imageUrl={gorge_1} />
+      <Skills skills={skills.icons} imageUrl={"gorge_1.jpeg"} />
       <Divider outline={true} />
       <Details
         header="Dreams for the Future"

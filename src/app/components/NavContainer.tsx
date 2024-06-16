@@ -7,7 +7,6 @@ interface NavContainerProps {
   navItems: {
     imageUrl: string;
     label: string;
-    // Make details optional, as it's only needed for icons with modals
     details?: {
       date: string;
       header: string;
@@ -29,16 +28,14 @@ const NavContainer: React.FC<NavContainerProps> = ({ navItems, title }) => {
 
   const handleNavItemClick = (item: NavContainerProps["navItems"][number]) => {
     if (item.details) {
-      // Check if the item has details (i.e., is an icon with a modal)
       setSelectedNavIcon(item.label);
     }
   };
 
   return (
     <div className="NavContainer max-w-full bg-black/50 flex flex-col items-center justify-between">
-      {/* Title (add Tailwind classes for styling) */}
       {title && (
-        <h2 className="z-3 absolute flex items-center justify-center h-1em w-fit p-3 -mt-11 text-2.5xl font-semibold text-white text-shadow-text-outline bg-black/50 rounded-xl shadow-md">
+        <h2 className="z-30 absolute flex items-center justify-center h-1em w-fit p-3 -mt-11 text-3xl font-semibold text-white text-shadow-text-outline bg-black/50 rounded-xl shadow-md">
           {title}
         </h2>
       )}
