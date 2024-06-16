@@ -76,7 +76,7 @@ const LogoNav: React.FC<LogoNavProps> = ({ footerRef, currentPage }) => {
   return (
     <div
       className={
-        "LogoNav fixed z-[25] ml-6 mt-6 aspect-square min-h-5 max-h-15 h-16 flex-col justify-start items-start transition-opacity duration-500 ease-in-out" +
+        "LogoNav fixed z-[125] ml-6 mt-6 aspect-square min-h-5 max-h-15 h-16 flex-col justify-start items-start transition-opacity duration-500 ease-in-out" +
         (isFooterVisible ? " hidden" : " flex")
       }
       style={{
@@ -89,7 +89,7 @@ const LogoNav: React.FC<LogoNavProps> = ({ footerRef, currentPage }) => {
             isIconOnly
             aria-label="Menu"
             className="relative flex h-[100%] w-[100%]"
-            as={"a"}
+            as="button"
           >
             <Image
               src="logo.png"
