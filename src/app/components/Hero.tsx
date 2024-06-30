@@ -25,7 +25,7 @@ const Hero: React.FC<HeroProps> = (props) => {
       className="absolute flex items-center justify-center w-full h-full z-2"
       >
         <h1
-          className="text-3xl text-center text-white font-medium shadow-lg bg-black bg-opacity-15 p-2 px-3 rounded-2xl"
+          className="text-[min(6vw,6vh)] text-center text-white font-medium shadow-lg bg-black bg-opacity-15 p-2 px-3 rounded-2xl"
         >
           {header || "Welcome to my portfolio!"}
         </h1>

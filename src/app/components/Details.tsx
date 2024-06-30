@@ -111,15 +111,17 @@ const Details: React.FC<DetailsProps> = ({
       >
         <Card
           className={
-            "absolute z-20 gap-4 mx-2 max-h-[65%] max-w-[50%] flex flex-col items-start justify-center p-8 bg-[rgba(30,30,30,0.75)] text-white rounded-2xl sm:p-0 sm:gap-0" +
+            "absolute z-20 gap-4 mx-2 max-h-[65%] max-w-[50%] flex flex-col p-[1vw] bg-[rgba(30,30,30,0.75)] text-white rounded-2xl" +
             " " +
-            (position === "left" ? "left-1/2" : "right-1/2")
+            (position === "left"
+              ? "left-1/2 items-start"
+              : "right-1/2 items-end")
           }
         >
-          <CardHeader className="relative sm:mb-[-1em]">
+          <CardHeader className="relative mb-[-0.5em] text-[min(3.5vw,3.5vh)]">
             {header || "Header"}
           </CardHeader>
-          <CardBody className="relative sm:text-xs sm:min-w-full">
+          <CardBody className="relative text-[min(2.5vw,2.5vh)]">
             {previewText || "This is Preview text."}
           </CardBody>
         </Card>
