@@ -19,7 +19,7 @@ const Gallery: React.FC<GalleryProps> = ({ images }) => {
   }));
 
   return (
-    <div onClick={(e) => e.stopPropagation()} style={{ zIndex: 100 }}>
+    <div onClick={(e) => e.stopPropagation()} style={{ zIndex: 100, maxWidth: "100vw" }}>
       <ImageGallery
         showFullscreenButton={true}
         items={galleryItems.slice(1)}

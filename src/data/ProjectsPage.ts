@@ -189,7 +189,7 @@ export const projectDetails = [
     ],
   },
   {
-    title: "DevvyDuckQuacks(DDQ)",
+    title: "DevvyDuckQuacks (DDQ)",
     startDate: "2023",
     description:
       "One of the first apps I was working on during my diploma. I had to work with a teammate to build a functioning resource wall (ie Pinterest) under a timecrunch deadline of one week. I've learned a lot about communicating since then!",

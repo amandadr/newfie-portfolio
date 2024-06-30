@@ -50,7 +50,7 @@ const Modal: React.FC<ModalProps> = ({
         style={{ filter: "blur(3px) opacity(0.75)"}}
       />
       <Card
-        className="z-2 px-8 py-6 bg-white rounded-lg cursor-default"
+        className="max-w-[100vw] z-2 px-8 py-6 bg-white rounded-lg cursor-default"
         onClick={(e) => e.stopPropagation()}
       >
         <CardHeader className="flex flex-row justify-between items-center gap-2">
