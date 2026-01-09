@@ -1,15 +1,85 @@
 {
-  "short_name": "Amanda Roy | Portfolio",
-  "name": "Amanda Roy | Full Stack Developer",
+  "name": "Amanda Roy | Portfolio",
+  "short_name": "Amanda Roy",
+  "description": "Amanda Roy's portfolio showcasing full-stack development skills with a personal twist.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#000000",
+  "orientation": "any",
+  "scope": "/",
+  "lang": "en",
+  "dir": "ltr",
+  "categories": ["portfolio", "developer", "technology"],
   "icons": [
     {
-      "src": "my_face.jpg",
-      "type": "image/png",
-      "sizes": "192x192, 512x512"
+      "src": "/icon.ico",
+      "sizes": "any",
+      "type": "image/x-icon",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/my_face.jpg",
+      "sizes": "512x512",
+      "type": "image/jpeg",
+      "purpose": "any"
     }
   ],
-  "start_url": ".",
-  "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "shortcuts": [
+    {
+      "name": "Projects",
+      "short_name": "Projects",
+      "description": "View Amanda's projects",
+      "url": "/projects",
+      "icons": [
+        {
+          "src": "/icon.ico",
+          "sizes": "32x32"
+        }
+      ]
+    },
+    {
+      "name": "About",
+      "short_name": "About",
+      "description": "Learn about Amanda",
+      "url": "/about",
+      "icons": [
+        {
+          "src": "/icon.ico",
+          "sizes": "32x32"
+        }
+      ]
+    },
+    {
+      "name": "Contact",
+      "short_name": "Contact",
+      "description": "Get in touch with Amanda",
+      "url": "/contact",
+      "icons": [
+        {
+          "src": "/icon.ico",
+          "sizes": "32x32"
+        }
+      ]
+    }
+  ],
+  "prefer_related_applications": false,
+  "edge_side_panel": {
+    "preferred_width": 400
+  },
+  "file_handlers": [
+    {
+      "action": "/",
+      "accept": {
+        "text/plain": [".txt"],
+        "application/json": [".json"]
+      }
+    }
+  ],
+  "protocol_handlers": [
+    {
+      "protocol": "mailto",
+      "url": "/contact?email=%s"
+    }
+  ]
 }

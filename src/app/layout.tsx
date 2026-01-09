@@ -1,6 +1,8 @@
 import { Metadata, Viewport } from "next";
 import { Providers } from "./providers";
-import "./globals.css"
+import Analytics from "@/app/components/Analytics";
+import Script from "next/script";
+import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Amanda Roy | Portfolio",
@@ -54,7 +56,31 @@ export default function RootLayout({
         />
       </head>
       <body>
-        <Providers>{children}</Providers>
+        <Providers>
+          {children}
+          <Analytics />
+        </Providers>
+
+        {/* Service Worker Registration */}
+        <Script
+          id="sw-register"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              if ('serviceWorker' in navigator) {
+                window.addEventListener('load', function() {
+                  navigator.serviceWorker.register('/sw.js')
+                    .then(function(registration) {
+                      console.log('SW registered: ', registration);
+                    })
+                    .catch(function(registrationError) {
+                      console.log('SW registration failed: ', registrationError);
+                    });
+                });
+              }
+            `,
+          }}
+        />
       </body>
     </html>
   );

@@ -16,12 +16,12 @@ export default function AboutPage() {
   return (
     <div className="AboutPage" style={{ width: "100vw", height: "100vh" }}>
       <LogoNav footerRef={footerRef} currentPage="about" />
-      <Hero header="Who Knit You?" imageUrl={"fire.jpeg"} />
+      <Hero header="Who knit you, ducky?" imageUrl={"fire.jpeg"} />
       <Divider outline={true} />
       <Details
         header="About Me"
         previewText="I am a software developer with a passion for learning. I am currently working on a project that will help people learn about how I code. It has nothing to do with knitting."
-        bgImage={"beach_2.jpeg"}
+        bgImage={"gorge_2.jpeg"}
         highlightImage={"me_1.jpeg"}
         highlightPosition="right"
       />
@@ -31,18 +31,17 @@ export default function AboutPage() {
       <Details
         header="What I Believe In"
         previewText="I believe in the power of learning and the importance of sharing knowledge. I believe that everyone has the potential to learn and grow."
-        bgImage={"flower_2.jpeg"}
-        highlightImage={"trees_2.jpeg"}
+        bgImage={"gorge_1.jpeg"}
+        highlightImage={"caribou_1.jpeg"}
         highlightPosition="left"
       />
       <Divider outline={true} />
-      <Skills skills={skills.icons} imageUrl={"gorge_1.jpeg"} />
+      <Skills skills={skills.icons} imageUrl={"gorge_3.jpeg"} />
       <Divider outline={true} />
       <Details
         header="Dreams for the Future"
         previewText="I dream of a world where everyone has access to the tools they need to learn and grow. I dream of a world where everyone has the opportunity to reach their full potential."
-        bgImage={"river.jpeg"}
-        highlightImage="trees_3.jpeg"
+        bgImage={"beach_4.jpeg"}
         highlightPosition="right"
       />
       <Divider outline={true} />

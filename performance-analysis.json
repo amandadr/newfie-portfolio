@@ -1,0 +1,37 @@
+{
+  "timestamp": "2025-05-30T20:59:21.947Z",
+  "bundleSize": {
+    "totalChunks": 1489450,
+    "totalCSS": 219759,
+    "total": 1709209
+  },
+  "imageOptimization": {
+    "referencesFound": 73,
+    "publicImagesFound": 1,
+    "unusedPublicImages": [
+      "/Users/amandaroy/Documents/My Stuff/My Projects/my-portfolio/public/my_face.jpg"
+    ]
+  },
+  "recommendations": [
+    {
+      "type": "bundle",
+      "severity": "high",
+      "message": "Bundle size is large. Consider code splitting and tree shaking.",
+      "size": 1709209
+    },
+    {
+      "type": "images",
+      "severity": "medium",
+      "message": "1 unused images found in public folder.",
+      "files": [
+        "/Users/amandaroy/Documents/My Stuff/My Projects/my-portfolio/public/my_face.jpg"
+      ]
+    },
+    {
+      "type": "images",
+      "severity": "medium",
+      "message": "Consider moving images to a CDN or using Next.js Image optimization.",
+      "count": 1
+    }
+  ]
+}

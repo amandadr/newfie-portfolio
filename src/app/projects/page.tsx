@@ -16,9 +16,12 @@ export default function ProjectsPage() {
       style={{ width: "100vw", height: "100vh" }}
     >
       <LogoNav footerRef={footerRef} currentPage="projects" />
-      <Hero header="Projects" imageUrl={"gorge_2.jpeg"} />
+      <Hero
+        header="Some piece of work, b'y!"
+        imageUrl={"gorge_2.jpeg"}
+      />
       <Introduction
-        headerText="These are my personal projects :)"
+        headerText="Busier than a bayman wit’ tree wood stoves"
         bodyText="I'll tell you more about how to take it all in right here..."
         imageUrl=""
       />

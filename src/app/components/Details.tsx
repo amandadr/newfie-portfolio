@@ -3,6 +3,11 @@ import React, { useState, useEffect, useRef } from "react";
 import { Card, CardHeader, CardBody } from "@nextui-org/react";
 import Image from "next/image";
 import NavItem from "components/Nav/NavItem";
+import {
+  getBlurDataURL,
+  getOptimalQuality,
+  getResponsiveSizes,
+} from "@/utils/imageUtils";
 
 interface DetailsProps {
   bgImage?: string;
@@ -56,11 +61,14 @@ const Details: React.FC<DetailsProps> = ({
       }
     >
       <Image
-        alt="coppermine_2.jpeg"
+        alt={`Background image for ${header} section`}
         src={bgImage || "coppermine_2.jpeg"}
         fill
         priority
-        sizes="100vw"
+        quality={getOptimalQuality(1920, "general")}
+        sizes={getResponsiveSizes("full-width")}
+        placeholder="blur"
+        blurDataURL={getBlurDataURL(1920, 600)}
         className="relative object-cover filter brightness-[0.85] z-1 w-[100vw] h-[60vh] outline-[0.5em] inset-[rgba(70,70,70,0.1)] outline-offset-[-0.5em]"
       />
       {highlightImage && (
@@ -73,10 +81,13 @@ const Details: React.FC<DetailsProps> = ({
           }
         >
           <Image
-            alt="me_1.jpeg"
+            alt={`Highlight image for ${header}`}
             src={highlightImage || "me_1.jpeg"}
             fill
-            sizes="50vw"
+            quality={getOptimalQuality(960, "general")}
+            sizes={getResponsiveSizes("half-width")}
+            placeholder="blur"
+            blurDataURL={getBlurDataURL(960, 600)}
             className={
               "absolute w-[100%] h-[100%] max-w-[100%] max-h-[100%] object-contain z-15 outline-[0.5em] inset-[rgba(70,70,70,0.1)] outline-offset-[-0.5em] border-[0.1em solid rgba(20,20,20,0.7)]" +
               " " +
