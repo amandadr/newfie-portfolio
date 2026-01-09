@@ -10,17 +10,22 @@ interface FooterProps {
 }
 
 const Footer = forwardRef<HTMLDivElement, FooterProps>(({ imageUrl }, ref) => {
+  const defaultImage =
+    "green_gardens.jpeg";
+  // Ensure we always have a valid image source
+  const imageSrc = imageUrl || defaultImage;
+
   return (
     <footer
       ref={ref}
-      className="Footer relative z-1 flex flex-row justify-between items-center bg-dark text-white h-[20vh] max-h-[25em] w-full"
+      className="Footer relative z-1 flex flex-row justify-between items-center text-white h-[20vh] max-h-[25em] w-full"
     >
       <Image
         alt="Background"
-        src={imageUrl || "green_gardens.jpeg"}
+        src={imageSrc}
         fill
         sizes="100vw"
-        className="absolute object-cover top-0 left-0 w-full h-full z-[-1]"
+        className="absolute object-cover top-0 left-0 w-full h-full z-[0]"
       />
       <div className="relative aspect-square flex min-h-[50%] max-h-[50%] max-w-[50%] bg-gray-300 ml-[1.5em]">
         <FooterLogo />

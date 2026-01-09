@@ -47,7 +47,7 @@ const Hero: React.FC<HeroProps> = (props) => {
   }, [heroImage]);
 
   return (
-    <div className="Hero relative w-[100vw] h-[100vh] flex items-center justify-center">
+    <div className="Hero relative w-[100vw] h-[80vh] flex items-center justify-center">
       <OptimizedImage
         src={heroImage}
         alt="Hero background"
